@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://easyspain.surge.sh/sitemap.xml
+Sitemap: https://easyspainsolutions-debug.github.io/easyspain-site/sitemap.xml
