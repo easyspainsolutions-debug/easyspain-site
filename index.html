@@ -273,30 +273,31 @@
     .contact-title { font-size: 13px; font-weight: 600; color: #EDF1F8; }
     .contact-sub   { font-size: 10px; color: #7B8BA8; }
 
-    /* ── Ряд ресурсов ───────────────────────────── */
-    .resource-row {
+    /* ── Соцсети ────────────────────────────────── */
+    .social-row {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 8px;
       width: 100%;
     }
 
-    .resource-btn {
+    .social-btn {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      gap: 5px;
-      padding: 12px 6px;
-      border-radius: 11px;
+      gap: 10px;
+      padding: 13px 14px;
+      border-radius: 12px;
       text-decoration: none;
-      background: transparent;
-      border: 1px solid #252E45;
-      transition: background 0.15s, border-color 0.15s;
+      background: #191F30;
+      border: 1px solid #222A40;
+      transition: background 0.15s, transform 0.12s;
     }
-    .resource-btn:hover { background: #1C2338; border-color: #2D3650; }
+    .social-btn:hover { background: #1C2338; transform: translateY(-1px); }
 
-    .resource-icon  { font-size: 20px; }
-    .resource-label { font-size: 10px; color: #6B7A96; font-weight: 500; }
+    .social-icon { font-size: 20px; flex-shrink: 0; }
+    .social-inner { display: flex; flex-direction: column; gap: 1px; }
+    .social-title { font-size: 13px; font-weight: 600; color: #C8D0E0; }
+    .social-sub   { font-size: 10px; color: #5A6A84; }
 
     /* ── Блог ─────────────────────────────────── */
     .blog-cards {
@@ -623,22 +624,25 @@
 
     <div class="divider"></div>
 
-    <!-- ── Ресурсы ── -->
-    <div class="resource-row">
+    <!-- ── Соцсети ── -->
+    <div class="section-label">Следи за нами</div>
 
-      <a class="resource-btn" href="/blog/">
-        <span class="resource-icon">📖</span>
-        <span class="resource-label">Блог</span>
+    <div class="social-row">
+
+      <a class="social-btn social-tg" href="https://t.me/easyspainuaru" target="_blank">
+        <span class="social-icon">📢</span>
+        <div class="social-inner">
+          <span class="social-title">Telegram-канал</span>
+          <span class="social-sub">Полезное каждый день</span>
+        </div>
       </a>
 
-      <a class="resource-btn" href="https://t.me/easyspainuaru" target="_blank">
-        <span class="resource-icon">📢</span>
-        <span class="resource-label">Канал</span>
-      </a>
-
-      <a class="resource-btn" href="https://instagram.com/easyspain_solutions" target="_blank">
-        <span class="resource-icon">📸</span>
-        <span class="resource-label">Instagram</span>
+      <a class="social-btn social-ig" href="https://instagram.com/easyspain_solutions" target="_blank">
+        <span class="social-icon">📸</span>
+        <div class="social-inner">
+          <span class="social-title">Instagram</span>
+          <span class="social-sub">@easyspain_solutions</span>
+        </div>
       </a>
 
     </div>
