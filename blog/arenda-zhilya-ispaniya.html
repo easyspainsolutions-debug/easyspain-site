@@ -89,6 +89,33 @@
     .rel-card .article-tag { margin-bottom: 2px; font-size: 10px; }
     .rel-card-title { font-size: 14px; font-weight: 600; color: #EDF1F8; line-height: 1.35; }
     .rel-card-meta  { font-size: 11px; color: #4A5570; margin-top: 2px; }
+
+    /* ── Category navigation ── */
+    .cat-nav { padding: 20px 0 4px; border-top: 1px solid #252E45; margin-top: 8px; }
+    .cat-nav-label {
+      font-size: 10px; font-weight: 700; color: #4A5570;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      display: block; margin-bottom: 10px;
+    }
+    .cat-nav-pills { display: flex; flex-wrap: wrap; gap: 7px; }
+    .cat-pill {
+      padding: 6px 13px; border-radius: 20px; font-size: 12px; font-weight: 600;
+      text-decoration: none; border: 1px solid #2D3650; background: #1F2638;
+      color: #7B8BA8; transition: color 0.15s, border-color 0.15s, background 0.15s;
+    }
+    .cat-pill:hover { color: #C4952A; border-color: #C4952A; }
+    .cat-pill.active { background: rgba(196,149,42,0.12); border-color: #C4952A; color: #C4952A; }
+
+    /* ── Featured related article ── */
+    .rel-featured {
+      display: flex; flex-direction: column; gap: 6px;
+      padding: 16px 18px; border-radius: 10px; text-decoration: none;
+      border: 1px solid rgba(196,149,42,0.25); background: #1F2638;
+      color: #EDF1F8; transition: background 0.15s; margin-bottom: 8px;
+    }
+    .rel-featured:hover { background: #263045; }
+    .rel-featured-label { font-size: 10px; font-weight: 700; color: #C4952A; text-transform: uppercase; letter-spacing: 0.1em; }
+    .rel-featured-title { font-size: 15px; font-weight: 700; color: #EDF1F8; line-height: 1.35; }
   </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8F3TB9QMLY"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8F3TB9QMLY');</script>
@@ -192,6 +219,8 @@
       <a class="btn btn-ig" href="https://instagram.com/easyspain_solutions" target="_blank"><span class="btn-icon">📸</span><div class="btn-inner"><span class="btn-title">Следи в Instagram</span><span class="btn-sub-text">@easyspain_solutions</span></div></a>
     </div>
 
+
+    <div id="cat-nav" class="cat-nav"></div>
     <div class="related-section" id="related-articles"></div>
     <div class="footer">WhatsApp <span>+34 641 048 296</span> · EASY SPAIN SOLUTIONS</div>
   </div>
@@ -206,8 +235,30 @@
     if(pool.length < 2) pool = ARTICLES.filter(function(a){return a.slug!==slug;});
     var related = pool.slice(0,3);
     if(!related.length) return;
+    // Category navigation pills
+    var CATS = [
+      {id:'vnzh',label:'ВНЖ'},{id:'docs',label:'Документы'},
+      {id:'finance',label:'Финансы'},{id:'work',label:'Работа'},
+      {id:'life',label:'Жильё'},{id:'social',label:'Семья'}
+    ];
+    var catEl = document.getElementById('cat-nav');
+    if(catEl){
+      var pills = CATS.map(function(c){
+        var act = c.id===cur.cat?' active':'';
+        return '<a class="cat-pill'+act+'" href="/blog/?cat='+c.id+'">'+c.label+'</a>';
+      }).join('');
+      catEl.innerHTML='<span class="cat-nav-label">Другие темы</span><div class="cat-nav-pills">'+pills+'</div>';
+    }
+
+    // Related: 1 featured + 2 regular
     var h = '<div class="divider"></div><span class="related-label">Читайте также</span>';
-    related.forEach(function(a){
+    var f = related[0];
+    h += '<a class="rel-featured" href="/blog/'+f.slug+'.html">';
+    h += '<span class="rel-featured-label">Читать следующим ↗</span>';
+    h += '<span class="rel-featured-title">'+f.title+'</span>';
+    h += '<span class="rel-card-meta">'+f.tag+' · ~'+f.time+' мин</span>';
+    h += '</a>';
+    related.slice(1).forEach(function(a){
       h += '<a class="rel-card" href="/blog/'+a.slug+'.html">';
       h += '<span class="article-tag">'+a.tag+'</span>';
       h += '<span class="rel-card-title">'+a.title+'</span>';

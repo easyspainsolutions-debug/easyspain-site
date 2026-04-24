@@ -186,6 +186,7 @@
     }
     .filter-btn:hover { color: #C4952A; border-color: #C4952A; }
     .filter-btn.active { background: #C4952A; border-color: #C4952A; color: #0F1117; }
+    .filter-btn .cnt { font-size: 10px; opacity: 0.7; margin-left: 2px; }
 
     .article-card.hidden { display: none; }
 
@@ -277,13 +278,13 @@
 
 
     <div class="filter-bar" id="filter-bar">
-      <button class="filter-btn active" data-filter="all">Все <span id="cnt-all"></span></button>
-      <button class="filter-btn" data-filter="vnzh">ВНЖ</button>
-      <button class="filter-btn" data-filter="docs">Документы</button>
-      <button class="filter-btn" data-filter="finance">Финансы</button>
-      <button class="filter-btn" data-filter="work">Работа</button>
-      <button class="filter-btn" data-filter="life">Жильё</button>
-      <button class="filter-btn" data-filter="social">Семья</button>
+      <button class="filter-btn active" data-filter="all">Все <span class="cnt" id="cnt-all"></span></button>
+      <button class="filter-btn" data-filter="vnzh">ВНЖ <span class="cnt" id="cnt-vnzh"></span></button>
+      <button class="filter-btn" data-filter="docs">Документы <span class="cnt" id="cnt-docs"></span></button>
+      <button class="filter-btn" data-filter="finance">Финансы <span class="cnt" id="cnt-finance"></span></button>
+      <button class="filter-btn" data-filter="work">Работа <span class="cnt" id="cnt-work"></span></button>
+      <button class="filter-btn" data-filter="life">Жильё <span class="cnt" id="cnt-life"></span></button>
+      <button class="filter-btn" data-filter="social">Семья <span class="cnt" id="cnt-social"></span></button>
     </div>
 
     <div class="divider"></div>
@@ -458,18 +459,38 @@
     // Count per category
     var counts = {all: cards.length};
     cards.forEach(function(c){ var k = c.dataset.cat; counts[k] = (counts[k]||0)+1; });
-    var allEl = document.getElementById('cnt-all');
-    if(allEl) allEl.textContent = '(' + counts.all + ')';
+
+    // Fill all count badges
+    ['all','vnzh','docs','finance','work','life','social'].forEach(function(cat){
+      var el = document.getElementById('cnt-' + cat);
+      if(el && counts[cat]) el.textContent = counts[cat];
+    });
+
+    function applyFilter(f) {
+      btns.forEach(function(b){ b.classList.toggle('active', b.dataset.filter === f); });
+      cards.forEach(function(c){
+        c.classList.toggle('hidden', f !== 'all' && c.dataset.cat !== f);
+      });
+    }
+
+    // Read filter from URL on load
+    var urlCat = (new URLSearchParams(location.search)).get('cat') || 'all';
+    applyFilter(urlCat);
 
     btns.forEach(function(btn){
       btn.addEventListener('click', function(){
         var f = btn.dataset.filter;
-        btns.forEach(function(b){ b.classList.remove('active'); });
-        btn.classList.add('active');
-        cards.forEach(function(c){
-          c.classList.toggle('hidden', f !== 'all' && c.dataset.cat !== f);
-        });
+        applyFilter(f);
+        // Update URL without reload
+        var url = f === 'all' ? location.pathname : location.pathname + '?cat=' + f;
+        history.pushState({cat: f}, '', url);
       });
+    });
+
+    // Handle browser back/forward
+    window.addEventListener('popstate', function(e){
+      var f = (e.state && e.state.cat) || 'all';
+      applyFilter(f);
     });
   })();
   </script>
