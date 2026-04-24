@@ -914,5 +914,37 @@
     }
   </script>
 
+  <script>
+    (function () {
+      var FEATURED = [
+        'nie-tie-ispaniya',
+        'vnzh-ispaniya',
+        'bank-nerezident',
+        'autonomo-ispaniya'
+      ];
+      function renderBlogCards() {
+        var container = document.getElementById('blog-cards');
+        if (!container || typeof ARTICLES === 'undefined') return;
+        FEATURED.forEach(function (slug) {
+          var a = ARTICLES.find(function (x) { return x.slug === slug; });
+          if (!a) return;
+          var el = document.createElement('a');
+          el.className = 'article-card';
+          el.href = '/blog/' + a.slug + '.html';
+          el.innerHTML =
+            '<span class="article-cat cat-' + a.cat + '">' + a.tag + '</span>' +
+            '<span class="article-title">' + a.title + '</span>' +
+            '<span class="article-meta">~' + a.time + ' мин чтения</span>';
+          container.appendChild(el);
+        });
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', renderBlogCards);
+      } else {
+        renderBlogCards();
+      }
+    })();
+  </script>
+
 </body>
 </html>
