@@ -298,6 +298,75 @@
     .resource-icon  { font-size: 20px; }
     .resource-label { font-size: 10px; color: #6B7A96; font-weight: 500; }
 
+    /* ── Блог ─────────────────────────────────── */
+    .blog-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .article-card {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      text-decoration: none;
+      background: #1F2638;
+      border: 1px solid #2A3350;
+      transition: border-color 0.15s, transform 0.12s;
+    }
+    .article-card:hover {
+      border-color: #C4952A;
+      transform: translateX(3px);
+    }
+    .article-card:active { transform: scale(0.99); }
+
+    .article-cat {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 20px;
+      letter-spacing: 0.04em;
+      width: fit-content;
+    }
+    .cat-vnzh    { background: rgba(38,160,218,0.15); color: #26A0DA; }
+    .cat-docs    { background: rgba(196,149,42,0.15);  color: #C4952A; }
+    .cat-finance { background: rgba(52,199,89,0.15);   color: #34C759; }
+    .cat-work    { background: rgba(175,82,222,0.15);  color: #AF52DE; }
+    .cat-life    { background: rgba(255,149,0,0.15);   color: #FF9500; }
+    .cat-social  { background: rgba(255,45,85,0.15);   color: #FF2D55; }
+
+    .article-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #C8D0E0;
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .article-meta {
+      font-size: 11px;
+      color: #4A5570;
+    }
+
+    .blog-all-link {
+      display: block;
+      text-align: right;
+      font-size: 13px;
+      color: #7B8BA8;
+      text-decoration: none;
+      width: 100%;
+      margin-top: 4px;
+      transition: color 0.15s;
+    }
+    .blog-all-link:hover { color: #C4952A; }
+
     /* ── Футер ──────────────────────────────────── */
     .footer {
       font-size: 11px;
