@@ -10,7 +10,6 @@
   <meta name="language" content="Russian">
   <link rel="canonical" href="https://easyspain.solutions/">
 
-  <!-- Open Graph (для красивых превью в Telegram, WhatsApp, соцсетях) -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://easyspain.solutions/">
   <meta property="og:title" content="Easy Spain Solutions — ВНЖ, банк, документы в Испании">
@@ -19,7 +18,6 @@
   <meta property="og:locale" content="ru_RU">
   <meta property="og:site_name" content="Easy Spain Solutions">
 
-  <!-- Schema.org LocalBusiness -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -55,6 +53,7 @@
     "inLanguage": ["ru", "uk", "es"]
   }
   </script>
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -64,9 +63,10 @@
       font-family: -apple-system, 'Inter', sans-serif;
       min-height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 24px 20px 40px;
+      overflow-x: hidden;
+      padding: 32px 20px 48px;
     }
 
     .card {
@@ -75,127 +75,232 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 8px;
+      gap: 0;
     }
 
     /* ── Шапка ─────────────────────────────────── */
     .avatar {
-      width: 88px;
-      height: 88px;
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
       background: #202637;
       border: 2px solid #C4952A;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 26px;
+      font-size: 22px;
       font-weight: 900;
       color: #C4952A;
       letter-spacing: -1px;
-      margin-bottom: 2px;
+      margin-bottom: 12px;
+      flex-shrink: 0;
     }
 
     .name {
-      font-size: 18px;
+      font-size: 19px;
       font-weight: 700;
       color: #EDF1F8;
       text-align: center;
+      line-height: 1.2;
     }
 
-    .sub {
-      font-size: 12px;
-      color: #8896B0;
-      text-align: center;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .sub-geo {
-      font-size: 11px;
-      color: #5A6A84;
-      text-align: center;
-      margin-top: -2px;
-      margin-bottom: 6px;
-    }
-
-    /* ── Секции ────────────────────────────────── */
-    .section-label {
-      width: 100%;
-      font-size: 10px;
-      font-weight: 700;
-      color: #6B7A96;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      padding: 8px 4px 2px;
-    }
-
-    /* ── Кнопки ────────────────────────────────── */
-    .btn {
-      display: flex;
+    .badge {
+      display: inline-flex;
       align-items: center;
-      gap: 14px;
-      width: 100%;
-      padding: 13px 16px;
-      border-radius: 11px;
-      text-decoration: none;
-      transition: background 0.15s, transform 0.12s;
-      cursor: pointer;
-      border: 1px solid #2D3650;
-      background: #1F2638;
-      color: #EDF1F8;
+      gap: 5px;
+      margin-top: 5px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: rgba(196, 149, 42, 0.12);
+      border: 1px solid rgba(196, 149, 42, 0.25);
+      font-size: 11px;
+      font-weight: 600;
+      color: #C4952A;
+      letter-spacing: 0.04em;
     }
 
-    .btn:hover  { background: #263045; transform: translateX(3px); }
-    .btn:active { transform: scale(0.99); }
-
-    .btn-icon {
-      font-size: 20px;
-      flex-shrink: 0;
-      width: 26px;
+    .tagline {
+      font-size: 13px;
+      color: #7B8BA8;
       text-align: center;
+      line-height: 1.6;
+      margin-top: 10px;
+      max-width: 320px;
     }
 
-    .btn-inner {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      text-align: left;
+    .tagline strong { color: #C4952A; font-weight: 600; }
+
+    .cities {
+      font-size: 11px;
+      color: #4A5570;
+      text-align: center;
+      margin-top: 5px;
+      letter-spacing: 0.02em;
     }
 
-    .btn-title { font-size: 14px; font-weight: 600; color: #EDF1F8; line-height: 1.3; }
-    .btn-sub   { font-size: 12px; font-weight: 400; color: #7B8BA8; line-height: 1.3; }
+    /* ── CTA ────────────────────────────────────── */
+    .cta-wrap {
+      width: 100%;
+      margin-top: 20px;
+    }
 
     .btn-cta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      padding: 16px 20px;
+      border-radius: 13px;
       background: #C4952A;
-      border-color: #C4952A;
-      padding: 15px 18px;
-      margin-bottom: 4px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s, transform 0.12s;
     }
-    .btn-cta .btn-title { color: #0F1117; font-size: 15px; font-weight: 700; }
-    .btn-cta .btn-sub   { color: rgba(15,17,23,0.55); }
-    .btn-cta:hover { background: #D4A535; border-color: #D4A535; }
+    .btn-cta:hover  { background: #D4A535; transform: translateY(-1px); }
+    .btn-cta:active { transform: scale(0.99); }
 
-    .btn-ghost {
-      background: transparent;
-      border-color: #252E45;
-    }
-    .btn-ghost .btn-title { color: #6B7A96; font-size: 13px; }
-    .btn-ghost .btn-sub   { color: #4A5570; }
-    .btn-ghost:hover { background: #1C2338; }
+    .cta-icon { font-size: 22px; flex-shrink: 0; }
 
+    .cta-inner { display: flex; flex-direction: column; gap: 1px; }
+    .cta-title { font-size: 15px; font-weight: 700; color: #0F1117; }
+    .cta-sub   { font-size: 12px; color: rgba(15,17,23,0.55); }
+
+    /* ── Разделитель ────────────────────────────── */
     .divider {
       width: 100%;
       height: 1px;
       background: #252E45;
-      margin: 6px 0;
+      margin: 18px 0;
     }
 
+    /* ── Секция-лейбл ───────────────────────────── */
+    .section-label {
+      width: 100%;
+      font-size: 10px;
+      font-weight: 700;
+      color: #4A5570;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 10px;
+    }
+
+    /* ── Сетка услуг ────────────────────────────── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .service-tile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+      padding: 16px 8px 14px;
+      border-radius: 12px;
+      text-decoration: none;
+      background: #1F2638;
+      border: 1px solid #2A3350;
+      transition: background 0.15s, transform 0.12s, border-color 0.15s;
+    }
+    .service-tile:hover {
+      background: #263045;
+      border-color: #3A4668;
+      transform: translateY(-2px);
+    }
+    .service-tile:active { transform: scale(0.98); }
+
+    .tile-icon  { font-size: 26px; line-height: 1; }
+    .tile-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: #C8D0E0;
+      text-align: center;
+      line-height: 1.35;
+    }
+    .tile-sub {
+      font-size: 10px;
+      color: #5A6A84;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    /* ── Ряд контактов ──────────────────────────── */
+    .contact-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .btn-contact {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 10px;
+      border-radius: 12px;
+      text-decoration: none;
+      border: 1px solid #2D3650;
+      background: #1F2638;
+      transition: background 0.15s, transform 0.12s;
+    }
+    .btn-contact:hover { background: #263045; transform: translateY(-1px); }
+
+    .btn-contact.wa {
+      background: rgba(37, 211, 102, 0.08);
+      border-color: rgba(37, 211, 102, 0.2);
+    }
+    .btn-contact.wa:hover { background: rgba(37, 211, 102, 0.14); }
+
+    .btn-contact.tg {
+      background: rgba(38, 160, 218, 0.08);
+      border-color: rgba(38, 160, 218, 0.2);
+    }
+    .btn-contact.tg:hover { background: rgba(38, 160, 218, 0.14); }
+
+    .contact-icon  { font-size: 18px; flex-shrink: 0; }
+    .contact-label {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+    .contact-title { font-size: 13px; font-weight: 600; color: #EDF1F8; }
+    .contact-sub   { font-size: 10px; color: #7B8BA8; }
+
+    /* ── Ряд ресурсов ───────────────────────────── */
+    .resource-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .resource-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      padding: 12px 6px;
+      border-radius: 11px;
+      text-decoration: none;
+      background: transparent;
+      border: 1px solid #252E45;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .resource-btn:hover { background: #1C2338; border-color: #2D3650; }
+
+    .resource-icon  { font-size: 20px; }
+    .resource-label { font-size: 10px; color: #6B7A96; font-weight: 500; }
+
+    /* ── Футер ──────────────────────────────────── */
     .footer {
       font-size: 11px;
       color: #3A4455;
       text-align: center;
-      margin-top: 10px;
-      padding-bottom: 4px;
+      margin-top: 18px;
     }
     .footer span { color: #5A6A84; }
 
@@ -229,20 +334,9 @@
       to   { transform: translateY(0);    opacity: 1; }
     }
 
-    .modal-title {
-      font-size: 17px;
-      font-weight: 700;
-      margin-bottom: 4px;
-      color: #EDF1F8;
-    }
+    .modal-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; color: #EDF1F8; }
+    .modal-sub   { font-size: 13px; color: #7B8BA8; margin-bottom: 20px; }
 
-    .modal-sub {
-      font-size: 13px;
-      color: #7B8BA8;
-      margin-bottom: 20px;
-    }
-
-    /* ── Поля формы ────────────────────────────── */
     .form-group {
       display: flex;
       flex-direction: column;
@@ -293,7 +387,6 @@
       gap: 10px;
     }
 
-    /* ── Ветка (sub-вопрос) ─────────────────────── */
     .sub-question {
       overflow: hidden;
       max-height: 0;
@@ -307,7 +400,6 @@
       margin-bottom: 14px;
     }
 
-    /* ── Кнопка отправки ───────────────────────── */
     .form-submit {
       width: 100%;
       background: #C4952A;
@@ -336,7 +428,6 @@
       margin-top: 4px;
     }
 
-    /* ── Успех ─────────────────────────────────── */
     .success-msg {
       display: none;
       text-align: center;
@@ -351,116 +442,116 @@
 
   <div class="card">
 
+    <!-- ── Шапка ── -->
     <div class="avatar">ESS</div>
     <div class="name">Daniil Pavlovskyi</div>
-    <div class="sub">Easy Spain Solutions 🇪🇸</div>
-    <div class="sub-geo">4 года опыта · Аликанте · Мурсия · Валенсия · Барселона</div>
+    <div class="badge">🇪🇸 Easy Spain Solutions</div>
 
-    <button class="btn btn-cta" onclick="openModal()" style="border:none;width:100%;">
-      <span class="btn-icon">📋</span>
-      <div class="btn-inner">
-        <span class="btn-title">Оставить заявку</span>
-        <span class="btn-sub">Свяжемся в течение часа · бесплатная консультация</span>
-      </div>
-    </button>
+    <p class="tagline">
+      4 года помогаем украинцам и русскоязычным с <strong>ВНЖ</strong>,
+      банком, документами и <strong>autónomo</strong> в Испании
+    </p>
+    <div class="cities">Барселона · Мадрид · Аликанте · Валенсия · Малага</div>
 
-    <div class="divider"></div>
-
-    <div class="section-label">Банковские услуги</div>
-
-    <a class="btn" href="https://wa.me/34641048296?text=БАНК">
-      <span class="btn-icon">🏦</span>
-      <div class="btn-inner">
-        <span class="btn-title">Открыть счёт · Ипотека</span>
-        <span class="btn-sub">Резидент и нерезидент · подбор банка под ситуацию</span>
-      </div>
-    </a>
-
-    <a class="btn" href="https://wa.me/34641048296?text=БАНК">
-      <span class="btn-icon">🔓</span>
-      <div class="btn-inner">
-        <span class="btn-title">Разблокировать счёт</span>
-        <span class="btn-sub">Заморозка, блокировка, требование документов</span>
-      </div>
-    </a>
-
-    <div class="section-label">Документы & Нотариус</div>
-
-    <a class="btn" href="https://wa.me/34641048296?text=ДОВЕРКА">
-      <span class="btn-icon">📄</span>
-      <div class="btn-inner">
-        <span class="btn-title">Доверенность</span>
-        <span class="btn-sub">Оформление за 30 минут · на родном языке</span>
-      </div>
-    </a>
-
-    <a class="btn" href="https://wa.me/34641048296?text=ЛЕГАЛИЗАЦИЯ">
-      <span class="btn-icon">🗂️</span>
-      <div class="btn-inner">
-        <span class="btn-title">Легализация · Апостиль · Переводы</span>
-        <span class="btn-sub">Дипломы, свидетельства, справки — под ключ</span>
-      </div>
-    </a>
-
-    <div class="section-label">Статус & Сопровождение</div>
-
-    <a class="btn" href="https://wa.me/34641048296?text=ВНЖ">
-      <span class="btn-icon">📑</span>
-      <div class="btn-inner">
-        <span class="btn-title">ВНЖ / Разрешение на проживание</span>
-        <span class="btn-sub">Временная защита, студент, резидент — разберём путь</span>
-      </div>
-    </a>
-
-    <a class="btn" href="https://wa.me/34641048296?text=ПЕРЕВОДЧИК">
-      <span class="btn-icon">🤝</span>
-      <div class="btn-inner">
-        <span class="btn-title">Переводчик на приём</span>
-        <span class="btn-sub">Банк · нотариус · госорган · Аликанте, Мурсия, Валенсия, Барселона</span>
-      </div>
-    </a>
+    <!-- ── Главный CTA ── -->
+    <div class="cta-wrap">
+      <button class="btn-cta" onclick="openModal()" style="width:100%;">
+        <span class="cta-icon">📋</span>
+        <div class="cta-inner">
+          <span class="cta-title">Бесплатная консультация</span>
+          <span class="cta-sub">Ответим в течение часа · без обязательств</span>
+        </div>
+      </button>
+    </div>
 
     <div class="divider"></div>
 
-    <a class="btn btn-ghost" href="/blog/" target="_blank">
-      <span class="btn-icon">📖</span>
-      <div class="btn-inner">
-        <span class="btn-title">Блог — гид по Испании</span>
-        <span class="btn-sub">ВНЖ, банк, autónomo, документы — разбираем подробно</span>
-      </div>
-    </a>
+    <!-- ── Услуги ── -->
+    <div class="section-label">Наши услуги</div>
 
-    <a class="btn btn-ghost" href="https://instagram.com/easyspain_solutions" target="_blank">
-      <span class="btn-icon">🎁</span>
-      <div class="btn-inner">
-        <span class="btn-title">Бесплатный чеклист для банка</span>
-        <span class="btn-sub">5 документов без которых испанский банк откажет → в Instagram</span>
-      </div>
-    </a>
+    <div class="services-grid">
 
-    <a class="btn btn-ghost" href="https://t.me/easyspainuaru" target="_blank">
-      <span class="btn-icon">📢</span>
-      <div class="btn-inner">
-        <span class="btn-title">Telegram-канал</span>
-        <span class="btn-sub">Полезные посты каждый день про жизнь в Испании</span>
-      </div>
-    </a>
+      <a class="service-tile" href="https://wa.me/34641048296?text=БАНК">
+        <span class="tile-icon">🏦</span>
+        <span class="tile-title">Банк & счёт</span>
+        <span class="tile-sub">Открыть · Разблокировать · Ипотека</span>
+      </a>
 
-    <a class="btn btn-ghost" href="https://t.me/EasySpainAdmin_bot?start=channel" target="_blank">
-      <span class="btn-icon">🤖</span>
-      <div class="btn-inner">
-        <span class="btn-title">Telegram-бот — бесплатная консультация</span>
-        <span class="btn-sub">@EasySpainAdmin_bot · ответим в течение 1–2 часов</span>
-      </div>
-    </a>
+      <a class="service-tile" href="https://wa.me/34641048296?text=ВНЖ">
+        <span class="tile-icon">📑</span>
+        <span class="tile-title">ВНЖ / Статус</span>
+        <span class="tile-sub">Arraigo · Временная защита</span>
+      </a>
 
-    <a class="btn btn-ghost" href="https://instagram.com/easyspain_solutions" target="_blank">
-      <span class="btn-icon">📸</span>
-      <div class="btn-inner">
-        <span class="btn-title">Instagram</span>
-        <span class="btn-sub">@easyspain_solutions</span>
-      </div>
-    </a>
+      <a class="service-tile" href="https://wa.me/34641048296?text=ДОВЕРКА">
+        <span class="tile-icon">📄</span>
+        <span class="tile-title">Доверенность</span>
+        <span class="tile-sub">Нотариус · 30 минут</span>
+      </a>
+
+      <a class="service-tile" href="https://wa.me/34641048296?text=ЛЕГАЛИЗАЦИЯ">
+        <span class="tile-icon">🗂️</span>
+        <span class="tile-title">Апостиль · Переводы</span>
+        <span class="tile-sub">Дипломы · Справки · Свидетельства</span>
+      </a>
+
+      <a class="service-tile" href="https://wa.me/34641048296?text=АВТОНОМО">
+        <span class="tile-icon">💼</span>
+        <span class="tile-title">Autónomo</span>
+        <span class="tile-sub">Регистрация · Налоги · IRPF</span>
+      </a>
+
+      <a class="service-tile" href="https://wa.me/34641048296?text=ПЕРЕВОДЧИК">
+        <span class="tile-icon">🤝</span>
+        <span class="tile-title">Переводчик</span>
+        <span class="tile-sub">Банк · Нотариус · Госорган</span>
+      </a>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ── Связаться ── -->
+    <div class="section-label">Написать напрямую</div>
+
+    <div class="contact-row">
+      <a class="btn-contact wa" href="https://wa.me/34641048296">
+        <span class="contact-icon">💬</span>
+        <div class="contact-label">
+          <span class="contact-title">WhatsApp</span>
+          <span class="contact-sub">+34 641 048 296</span>
+        </div>
+      </a>
+      <a class="btn-contact tg" href="https://t.me/EasySpainAdmin_bot?start=channel">
+        <span class="contact-icon">✍️</span>
+        <div class="contact-label">
+          <span class="contact-title">Telegram-бот</span>
+          <span class="contact-sub">@EasySpainAdmin_bot</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ── Ресурсы ── -->
+    <div class="resource-row">
+
+      <a class="resource-btn" href="/blog/">
+        <span class="resource-icon">📖</span>
+        <span class="resource-label">Блог</span>
+      </a>
+
+      <a class="resource-btn" href="https://t.me/easyspainuaru" target="_blank">
+        <span class="resource-icon">📢</span>
+        <span class="resource-label">Канал</span>
+      </a>
+
+      <a class="resource-btn" href="https://instagram.com/easyspain_solutions" target="_blank">
+        <span class="resource-icon">📸</span>
+        <span class="resource-label">Instagram</span>
+      </a>
+
+    </div>
 
     <div class="footer">
       WhatsApp <span>+34 641 048 296</span> · EASY SPAIN SOLUTIONS
@@ -473,8 +564,8 @@
     <div class="modal">
 
       <div id="formView">
-        <div class="modal-title">Оставить заявку</div>
-        <div class="modal-sub">Свяжемся в течение часа · бесплатная консультация</div>
+        <div class="modal-title">Бесплатная консультация</div>
+        <div class="modal-sub">Свяжемся в течение часа · без обязательств</div>
 
         <form id="leadForm" onsubmit="submitForm(event)">
 
@@ -489,7 +580,6 @@
             </div>
           </div>
 
-          <!-- Выбор услуги -->
           <div class="form-group">
             <label>С чем нужна помощь? *</label>
             <select name="service" id="serviceSelect" required onchange="onServiceChange(this.value)">
@@ -507,11 +597,14 @@
                 <option value="ВНЖ / статус">ВНЖ / Разрешение на проживание</option>
                 <option value="Переводчик на приём">Переводчик на приём</option>
               </optgroup>
+              <optgroup label="— Бизнес">
+                <option value="Autónomo — регистрация">Регистрация autónomo</option>
+                <option value="Autónomo — налоги">Налоги, IRPF, IVA</option>
+              </optgroup>
               <option value="Другое">Другой вопрос</option>
             </select>
           </div>
 
-          <!-- Ветка: уточняющий вопрос -->
           <div class="sub-question" id="subQuestion">
             <div class="form-group" style="margin-bottom:0">
               <label id="subLabel">Уточните</label>
@@ -521,7 +614,6 @@
             </div>
           </div>
 
-          <!-- Общие поля -->
           <div class="form-row">
             <div class="form-group">
               <label>Город</label>
@@ -584,7 +676,6 @@
         </form>
       </div>
 
-      <!-- Успех -->
       <div class="success-msg" id="successView">
         <div class="emoji">✅</div>
         <h3>Заявка принята!</h3>
@@ -602,7 +693,6 @@
   <script>
     const SHEET_URL = 'https://script.google.com/macros/s/AKfycby9aVDnRyQ7y_IH3UDUhoBPDJHv6ab7AadbAMTt9A3IVC1LFq--VWjSZuLjZ3QC_g8P8g/exec';
 
-    // ── Ветки услуг ──────────────────────────────────
     const SUB_OPTIONS = {
       'Нотариус · Доверенность': {
         label: 'На что оформляем?',
@@ -632,6 +722,14 @@
         label: 'Куда нужен переводчик?',
         options: ['Банк', 'Нотариус', 'Экстранхерия / МВД', 'Консульство', 'Суд', 'Другое']
       },
+      'Autónomo — регистрация': {
+        label: 'Ситуация',
+        options: ['Первая регистрация', 'Переход с найма', 'Уже autónomo, нужна помощь']
+      },
+      'Autónomo — налоги': {
+        label: 'Тип помощи',
+        options: ['Квартальные декларации', 'Годовой IRPF', 'Modelo 720', 'Konsultatsiya']
+      },
     };
 
     function onServiceChange(service) {
@@ -655,7 +753,6 @@
       }
     }
 
-    // ── Модалка ──────────────────────────────────────
     function openModal() {
       document.getElementById('modal').classList.add('open');
       document.body.style.overflow = 'hidden';
@@ -665,7 +762,7 @@
       document.getElementById('modal').classList.remove('open');
       document.body.style.overflow = '';
       setTimeout(() => {
-        document.getElementById('formView').style.display = '';
+        document.getElementById('formView').style.display  = '';
         document.getElementById('successView').style.display = 'none';
         document.getElementById('leadForm').reset();
         document.getElementById('subQuestion').classList.remove('visible');
@@ -676,7 +773,6 @@
       if (e.target === document.getElementById('modal')) closeModal();
     }
 
-    // ── Отправка ─────────────────────────────────────
     async function submitForm(e) {
       e.preventDefault();
       const btn = document.getElementById('submitBtn');
@@ -707,7 +803,7 @@
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify(data)
         });
-        document.getElementById('formView').style.display = 'none';
+        document.getElementById('formView').style.display  = 'none';
         document.getElementById('successView').style.display = 'block';
 
         const msg = encodeURIComponent(
