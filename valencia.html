@@ -6,6 +6,7 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/site-nav.css">
   <link rel="stylesheet" href="/assets/desktop.css">
   <title>ВНЖ и документы в Валенсии | EasySpain</title>
   <meta name="description" content="Помощь с ВНЖ, открытием счёта в банке, нотариусом, апостилем и autónomo в Валенсии. Украинцам и русскоязычным на родном языке. Бесплатная консультация. Валенсия, Comunitat Valenciana.">
@@ -259,14 +260,25 @@
   </script>
 </head>
 <body>
+<header class="site-nav" role="banner">
+  <div class="site-nav__inner">
+    <a class="site-nav__brand" href="/">
+      <span class="site-nav__brand-mark">ES</span>
+      <span class="site-nav__brand-text">Easy<span>Spain</span></span>
+    </a>
+    <nav class="site-nav__links" aria-label="Главное меню">
+      <a href="/" data-page="home">Главная</a>
+      <a href="/services.html" data-page="services">Услуги</a>
+      <a href="/blog/" data-page="blog">Блог</a>
+    </nav>
+    <a class="site-nav__wa" href="https://wa.me/34641048296" rel="noopener">
+      <span class="site-nav__wa-icon">💬</span><span class="site-nav__wa-text">WhatsApp</span>
+    </a>
+  </div>
+  <script>(function(){var p=location.pathname;var k=(p==='/'||p==='/index.html')?'home':p.indexOf('/services')===0?'services':p.indexOf('/blog')===0?'blog':'';if(k){var l=document.querySelector('.site-nav__links a[data-page="'+k+'"]');if(l)l.classList.add('active');}})();</script>
+</header>
 
-  <nav style="width:100%;max-width:420px;margin:0 auto 16px;display:flex;align-items:center;gap:8px;padding:12px 4px 0;">
-    <a href="/" style="font-size:13px;color:#C4952A;text-decoration:none;">← Easy Spain</a>
-    <span style="color:#3A4455;font-size:13px;">/</span>
-    <span style="font-size:13px;color:#7B8BA8;">Валенсия</span>
-  </nav>
-
-  <div class="card">
+<div class="card">
 
 
     <div class="avatar">ESS</div>

@@ -1,0 +1,149 @@
+/* ============================================================
+   EasySpain — Единый header (.site-nav) для всех страниц.
+   Mobile-first, расширяется на десктопе (≥900px).
+   ============================================================ */
+
+/* Убираем top-padding у body на страницах где есть site-nav,
+   чтобы шапка прилипала прямо к верху окна. */
+body:has(> header.site-nav) {
+  padding-top: 0 !important;
+}
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(23, 28, 40, 0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid #1E2638;
+  /* Игнорируем body-padding по бокам, всегда полная ширина окна */
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-family: -apple-system, 'Inter', sans-serif;
+  color: #EDF1F8;
+}
+
+.site-nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 12px 16px;
+}
+
+.site-nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  color: #EDF1F8;
+  flex-shrink: 0;
+}
+.site-nav__brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px; height: 28px;
+  border-radius: 8px;
+  background: #C4952A;
+  color: #0F1117;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+.site-nav__brand-text { font-size: 16px; }
+.site-nav__brand-text span { color: #C4952A; }
+
+.site-nav__links {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex: 1 1 auto;
+  justify-content: center;
+}
+.site-nav__links a {
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #A8B5CC;
+  text-decoration: none;
+  transition: color 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+.site-nav__links a:hover { color: #EDF1F8; background: #1F2638; }
+.site-nav__links a.active {
+  color: #C4952A;
+  background: rgba(196, 149, 42, 0.12);
+}
+
+.site-nav__wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(37, 211, 102, 0.14);
+  border: 1px solid rgba(37, 211, 102, 0.32);
+  color: #4ED88A;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: background 0.15s, box-shadow 0.15s;
+  box-shadow: 0 0 12px rgba(78, 216, 138, 0.18);
+}
+.site-nav__wa:hover {
+  background: rgba(37, 211, 102, 0.22);
+  box-shadow: 0 0 14px rgba(78, 216, 138, 0.32);
+}
+.site-nav__wa-text { display: none; }
+.site-nav__wa-icon { font-size: 14px; }
+
+/* Очень узкие экраны — спрячем «Главная» (лого уже ведёт туда) */
+@media (max-width: 359px) {
+  .site-nav__links a[data-page="home"] { display: none; }
+  .site-nav__inner { padding: 10px 12px; gap: 8px; }
+  .site-nav__brand-text { font-size: 15px; }
+}
+
+/* ============================================================
+   Десктоп ≥900px — расширенный header
+   ============================================================ */
+@media (min-width: 900px) {
+  .site-nav {
+    margin: 0 0 0;
+    padding: 0;
+  }
+  .site-nav__inner {
+    max-width: 1180px;
+    padding: 16px 32px;
+    gap: 24px;
+  }
+  .site-nav__brand-mark {
+    width: 34px; height: 34px;
+    font-size: 14px;
+    border-radius: 9px;
+  }
+  .site-nav__brand-text { font-size: 19px; }
+  .site-nav__links { gap: 4px; justify-content: flex-start; }
+  .site-nav__links a {
+    padding: 9px 16px;
+    font-size: 14px;
+  }
+  .site-nav__wa {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+  .site-nav__wa-text { display: inline; }
+  .site-nav__wa-icon { font-size: 16px; }
+}
