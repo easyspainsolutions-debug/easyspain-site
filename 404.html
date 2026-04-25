@@ -2,22 +2,32 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Страница не найдена — EasySpain</title>
-  <meta name="description" content="Запрашиваемая страница не найдена. Вернитесь на главную или перейдите в блог EasySpain.">
-  <meta name="robots" content="noindex, nofollow">
-  <link rel="canonical" href="https://easyspain.solutions/404.html">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Страница не найдена | EasySpain</title>
+  <meta name="robots" content="noindex, follow">
+  <meta name="description" content="Страница не найдена. Загляните в услуги, блог или напишите в WhatsApp.">
 
-  <!-- GA4 -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="404 — Страница не найдена | EasySpain">
+  <meta property="og:description" content="Страница не найдена. Загляните в услуги, блог или напишите в WhatsApp.">
+  <meta property="og:image" content="https://easyspain.solutions/og-image.png">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="EasySpain">
+
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8F3TB9QMLY"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-8F3TB9QMLY');
+    gtag('event', 'page_not_found', {
+      'page_path': window.location.pathname,
+      'page_referrer': document.referrer
+    });
   </script>
 
   <style>
@@ -31,9 +41,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       overflow-x: hidden;
-      padding: 32px 20px 48px;
+      padding: 24px 20px 40px;
     }
 
     .card {
@@ -42,214 +52,209 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0;
+      gap: 8px;
     }
 
-    /* 404 number */
-    .error-code {
-      font-size: 96px;
+    .avatar {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: #202637;
+      border: 2px solid #C4952A;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
       font-weight: 900;
       color: #C4952A;
-      line-height: 1;
-      letter-spacing: -4px;
-      margin-bottom: 8px;
-      opacity: 0.9;
+      letter-spacing: -1px;
+      margin-bottom: 2px;
     }
 
-    /* Logo */
-    .logo {
-      font-size: 15px;
-      font-weight: 700;
-      color: #C4952A;
-      letter-spacing: -0.5px;
-      margin-bottom: 20px;
-    }
-
-    .logo span {
-      color: #7B8BA8;
-      font-weight: 400;
-    }
-
-    /* Heading */
-    .heading {
-      font-size: 22px;
+    .name {
+      font-size: 18px;
       font-weight: 700;
       color: #EDF1F8;
       text-align: center;
-      line-height: 1.2;
-      margin-bottom: 10px;
     }
 
-    .subheading {
-      font-size: 14px;
-      color: #7B8BA8;
+    .sub-geo {
+      font-size: 11px;
+      color: #5A6A84;
       text-align: center;
-      line-height: 1.6;
-      max-width: 320px;
-      margin-bottom: 28px;
+      margin-top: -2px;
+      margin-bottom: 6px;
     }
 
-    /* Buttons */
-    .btn-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
+    .city-intro {
       width: 100%;
-      margin-bottom: 20px;
-    }
-
-    .btn-primary {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 14px 16px;
-      border-radius: 13px;
-      background: #C4952A;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 700;
-      color: #0F1117;
-      transition: background 0.15s, transform 0.12s;
-    }
-    .btn-primary:hover  { background: #D4A535; transform: translateY(-1px); }
-    .btn-primary:active { transform: scale(0.98); }
-
-    .btn-secondary {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 14px 16px;
-      border-radius: 13px;
       background: #1F2638;
-      border: 1px solid #2A3350;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-      color: #EDF1F8;
-      transition: background 0.15s, transform 0.12s;
-    }
-    .btn-secondary:hover  { background: #263045; transform: translateY(-1px); }
-    .btn-secondary:active { transform: scale(0.98); }
-
-    /* Divider */
-    .divider {
-      width: 100%;
-      height: 1px;
-      background: #252E45;
-      margin: 20px 0;
+      border: 1px solid #2D3650;
+      border-radius: 11px;
+      padding: 14px 16px;
+      font-size: 13px;
+      color: #8896B0;
+      line-height: 1.6;
+      margin-bottom: 4px;
     }
 
-    /* Section label */
     .section-label {
       width: 100%;
       font-size: 10px;
       font-weight: 700;
-      color: #4A5570;
+      color: #6B7A96;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      margin-bottom: 10px;
+      padding: 8px 4px 2px;
     }
 
-    /* Article cards */
-    .blog-cards {
+    .btn {
       display: flex;
-      flex-direction: column;
-      gap: 8px;
+      align-items: center;
+      gap: 14px;
       width: 100%;
-      margin-bottom: 20px;
+      padding: 13px 16px;
+      border-radius: 11px;
+      text-decoration: none;
+      transition: background 0.15s, transform 0.12s;
+      cursor: pointer;
+      border: 1px solid #2D3650;
+      background: #1F2638;
+      color: #EDF1F8;
     }
 
-    .article-card {
+    .btn:hover  { background: #263045; transform: translateX(3px); }
+    .btn:active { transform: scale(0.99); }
+
+    .btn-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      width: 26px;
+      text-align: center;
+    }
+
+    .btn-inner {
       display: flex;
       flex-direction: column;
-      gap: 4px;
-      padding: 13px 16px;
-      border-radius: 12px;
-      text-decoration: none;
-      background: #1F2638;
-      border: 1px solid #2A3350;
-      transition: border-color 0.15s, transform 0.12s;
-    }
-    .article-card:hover {
-      border-color: rgba(196, 149, 42, 0.35);
-      transform: translateY(-1px);
-    }
-    .article-card:active { transform: scale(0.99); }
-
-    .article-tag {
-      font-size: 10px;
-      font-weight: 700;
-      color: #C4952A;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
+      gap: 2px;
+      text-align: left;
     }
 
-    .article-title {
-      font-size: 13px;
-      font-weight: 600;
-      color: #C8D0E0;
-      line-height: 1.4;
+    .btn-title { font-size: 14px; font-weight: 600; color: #EDF1F8; line-height: 1.3; }
+    .btn-sub   { font-size: 12px; font-weight: 400; color: #7B8BA8; line-height: 1.3; }
+
+    .btn-cta {
+      background: #C4952A;
+      border-color: #C4952A;
+      padding: 15px 18px;
+      margin-bottom: 4px;
+    }
+    .btn-cta .btn-title { color: #0F1117; font-size: 15px; font-weight: 700; }
+    .btn-cta .btn-sub   { color: rgba(15,17,23,0.55); }
+    .btn-cta:hover { background: #D4A535; border-color: #D4A535; }
+
+    .btn-ghost {
+      background: transparent;
+      border-color: #252E45;
+    }
+    .btn-ghost .btn-title { color: #6B7A96; font-size: 13px; }
+    .btn-ghost .btn-sub   { color: #4A5570; }
+    .btn-ghost:hover { background: #1C2338; }
+
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: #252E45;
+      margin: 6px 0;
     }
 
-    /* WhatsApp hint */
-    .wa-hint {
-      font-size: 13px;
-      color: #7B8BA8;
+    .footer {
+      font-size: 11px;
+      color: #3A4455;
       text-align: center;
-      line-height: 1.6;
+      margin-top: 10px;
+      padding-bottom: 4px;
     }
-
-    .wa-hint a {
-      color: #25D366;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .wa-hint a:hover { text-decoration: underline; }
+    .footer span { color: #5A6A84; }
   </style>
 </head>
 <body>
   <div class="card">
 
-    <div class="logo">Easy<span>Spain</span></div>
+    <!-- Avatar -->
+    <div class="avatar">404</div>
 
-    <div class="error-code">404</div>
+    <!-- Title -->
+    <div class="name">Страница не найдена</div>
 
-    <h1 class="heading">Страница не найдена</h1>
-    <p class="subheading">Возможно, ссылка устарела или была перемещена. Попробуйте вернуться на главную.</p>
+    <!-- Subtitle -->
+    <div class="sub-geo">Возможно, страница переехала — как и вы в Испанию</div>
 
-    <div class="btn-row">
-      <a href="/" class="btn-primary">На главную</a>
-      <a href="/blog/index.html" class="btn-secondary">Читать блог</a>
+    <!-- Explanation card -->
+    <div class="city-intro">
+      Ссылка устарела или адрес ошибочный. Загляните в основные разделы — там всё, что вам нужно.
     </div>
 
+    <!-- Main CTA -->
+    <a class="btn btn-cta" href="/">
+      <span class="btn-icon">🏠</span>
+      <div class="btn-inner">
+        <span class="btn-title">&#8592; На главную</span>
+      </div>
+    </a>
+
+    <!-- Section label -->
+    <div class="section-label">Куда пойти</div>
+
+    <!-- Services -->
+    <a class="btn" href="/services.html">
+      <span class="btn-icon">📋</span>
+      <div class="btn-inner">
+        <span class="btn-title">Услуги под ключ</span>
+        <span class="btn-sub">Нотариус, банк, ВНЖ, документы</span>
+      </div>
+    </a>
+
+    <!-- Blog -->
+    <a class="btn" href="/blog/">
+      <span class="btn-icon">📰</span>
+      <div class="btn-inner">
+        <span class="btn-title">Блог — 25 статей</span>
+        <span class="btn-sub">ВНЖ, документы, банки, autónomo</span>
+      </div>
+    </a>
+
+    <!-- WhatsApp -->
+    <a class="btn" href="https://wa.me/34641048296" target="_blank" rel="noopener noreferrer">
+      <span class="btn-icon">💬</span>
+      <div class="btn-inner">
+        <span class="btn-title">WhatsApp прямо сейчас</span>
+        <span class="btn-sub">+34 641 048 296 · отвечаю в течение часа</span>
+      </div>
+    </a>
+
+    <!-- Divider -->
     <div class="divider"></div>
 
-    <div class="section-label">Популярные статьи</div>
+    <!-- Ghost buttons -->
+    <a class="btn btn-ghost" href="https://t.me/EasySpainAdmin_bot" target="_blank" rel="noopener noreferrer">
+      <span class="btn-icon">🤖</span>
+      <div class="btn-inner">
+        <span class="btn-title">Бот @EasySpainAdmin_bot</span>
+      </div>
+    </a>
 
-    <div class="blog-cards">
-      <a href="/blog/vnzh-ispaniya.html" class="article-card">
-        <span class="article-tag">ВНЖ</span>
-        <span class="article-title">ВНЖ в Испании: всё, что нужно знать в 2025 году</span>
-      </a>
-      <a href="/blog/bank-nerezident.html" class="article-card">
-        <span class="article-tag">Банки</span>
-        <span class="article-title">Как открыть счёт в испанском банке нерезиденту</span>
-      </a>
-      <a href="/blog/nie-tie-ispaniya.html" class="article-card">
-        <span class="article-tag">Документы</span>
-        <span class="article-title">NIE и TIE в Испании: в чём разница и как получить</span>
-      </a>
-      <a href="/blog/autonomo-ispaniya.html" class="article-card">
-        <span class="article-tag">Работа</span>
-        <span class="article-title">Autónomo в Испании: регистрация, налоги, взносы</span>
-      </a>
+    <a class="btn btn-ghost" href="https://t.me/easyspainuaru" target="_blank" rel="noopener noreferrer">
+      <span class="btn-icon">📢</span>
+      <div class="btn-inner">
+        <span class="btn-title">Канал @easyspainuaru</span>
+      </div>
+    </a>
+
+    <!-- Footer -->
+    <div class="footer">
+      &#169; 2024 EasySpain &middot; <span>Документы в Испании под ключ</span>
     </div>
-
-    <div class="divider"></div>
-
-    <p class="wa-hint">Или напишите нам напрямую&nbsp;&nbsp;<a href="https://wa.me/34641048296" target="_blank" rel="noopener">💬 WhatsApp</a></p>
 
   </div>
 </body>
