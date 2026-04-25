@@ -7,8 +7,8 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Услуги EasySpain — ВНЖ, банк, документы в Испании. Цены</title>
-  <meta name="description" content="Фиксированные цены на помощь с ВНЖ, arraigo, открытием банковского счёта и налогами в Испании. Бесплатная консультация 15 минут. Без скрытых платежей.">
-  <meta name="keywords" content="услуги ВНЖ Испания, arraigo social цена, помощь с банком Испания, налоговая консультация Испания, IRPF, Modelo 720, EasySpain">
+  <meta name="description" content="Нотариус, банк, ВНЖ в Испании — физическое сопровождение. Нотариус от €79, открытие счёта от €149, разблокировка от €249. Прозрачные цены, без скрытых платежей.">
+  <meta name="keywords" content="нотариус Испания цена, доверенность Испания, открытие банковского счёта Испания, разблокировка счёта Испания, ВНЖ arraigo, EasySpain услуги">
   <meta name="robots" content="index, follow">
   <meta name="language" content="Russian">
   <link rel="canonical" href="https://easyspain.solutions/services.html">
@@ -26,7 +26,7 @@
     "@context": "https://schema.org",
     "@type": "ItemList",
     "name": "Услуги EasySpain",
-    "description": "Помощь украинцам и русскоязычным с ВНЖ, банком, документами и налогами в Испании",
+    "description": "Нотариус, банк, ВНЖ в Испании — физическое сопровождение. Прозрачные цены.",
     "url": "https://easyspain.solutions/services.html",
     "itemListElement": [
       {
@@ -34,11 +34,12 @@
         "position": 1,
         "item": {
           "@type": "Service",
-          "name": "Бесплатная консультация",
-          "description": "15 минут в Telegram или WhatsApp. Разберём вашу ситуацию и скажем какой путь подходит вам.",
+          "name": "Нотариус в Испании — доверенность на родном языке",
+          "description": "Доверенность на украинском, русском или английском языке без отдельного переводчика. За 30 минут. Тир S (испанский) от €79, M (родной язык) от €109, L (срочно) от €149.",
           "offers": {
-            "@type": "Offer",
-            "price": "0",
+            "@type": "AggregateOffer",
+            "lowPrice": "79",
+            "highPrice": "149",
             "priceCurrency": "EUR",
             "availability": "https://schema.org/InStock"
           },
@@ -55,11 +56,12 @@
         "position": 2,
         "item": {
           "@type": "Service",
-          "name": "Проверка документов",
-          "description": "Проверим ваш пакет документов для arraigo, ВНЖ или банка. Письменный чек-лист + ответы на вопросы. Ответ в течение 24 часов.",
+          "name": "Банк в Испании — открытие, разблокировка, ипотека",
+          "description": "Физическое сопровождение к счёту. Открытие от €149, разблокировка от €249, ипотека от €500. Без дополнительных расходов — банк не берёт госпошлин.",
           "offers": {
-            "@type": "Offer",
-            "price": "49",
+            "@type": "AggregateOffer",
+            "lowPrice": "149",
+            "highPrice": "500",
             "priceCurrency": "EUR",
             "availability": "https://schema.org/InStock"
           },
@@ -74,27 +76,6 @@
       {
         "@type": "ListItem",
         "position": 3,
-        "item": {
-          "@type": "Service",
-          "name": "Помощь с банком",
-          "description": "Подберём банк под ваш статус, составим точный список документов, объясним как заполнить анкету.",
-          "offers": {
-            "@type": "Offer",
-            "price": "29",
-            "priceCurrency": "EUR",
-            "availability": "https://schema.org/InStock"
-          },
-          "provider": {
-            "@type": "LegalService",
-            "name": "EasySpain",
-            "url": "https://easyspain.solutions/",
-            "telephone": "+34641048296"
-          }
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 4,
         "item": {
           "@type": "Service",
           "name": "Сопровождение подачи на ВНЖ",
@@ -120,7 +101,7 @@
       },
       {
         "@type": "ListItem",
-        "position": 5,
+        "position": 4,
         "item": {
           "@type": "Service",
           "name": "Налоговая консультация",
@@ -128,6 +109,27 @@
           "offers": {
             "@type": "Offer",
             "price": "79",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock"
+          },
+          "provider": {
+            "@type": "LegalService",
+            "name": "EasySpain",
+            "url": "https://easyspain.solutions/",
+            "telephone": "+34641048296"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": {
+          "@type": "Service",
+          "name": "Бесплатная консультация",
+          "description": "15 минут в Telegram или WhatsApp. Разберём вашу ситуацию и скажем какой путь подходит вам.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
             "priceCurrency": "EUR",
             "availability": "https://schema.org/InStock"
           },
@@ -523,6 +525,82 @@
       margin-top: 8px;
     }
     .footer-note span { color: #5A6A84; }
+
+    /* ── Tier table (нотариус) ── */
+    .tier-table {
+      border: 1px solid #2D3650;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 14px;
+    }
+    .tier-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 14px;
+      border-bottom: 1px solid #252E45;
+      font-size: 13px;
+      color: #B0BCCC;
+    }
+    .tier-row:last-child { border-bottom: none; }
+    .tier-row.tier-featured {
+      background: rgba(196, 149, 42, 0.08);
+      color: #EDF1F8;
+      font-weight: 600;
+    }
+    .tier-price {
+      font-weight: 700;
+      color: #EDF1F8;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+    .tier-row.tier-featured .tier-price { color: #C4952A; }
+
+    /* ── Bank sub-services ── */
+    .bank-list {
+      margin-bottom: 14px;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #2D3650;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .bank-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 14px;
+      border-bottom: 1px solid #252E45;
+      gap: 8px;
+    }
+    .bank-item:last-child { border-bottom: none; }
+    .bank-item-name {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      font-size: 13px;
+      color: #B0BCCC;
+    }
+    .bank-item-sub { font-size: 11px; color: #4A5570; }
+    .bank-item-price {
+      font-weight: 700;
+      color: #C4952A;
+      font-size: 14px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ── Extra note ── */
+    .extra-note {
+      font-size: 11px;
+      color: #4A5570;
+      margin-bottom: 14px;
+      line-height: 1.5;
+      padding: 8px 10px;
+      background: #151B2A;
+      border-radius: 8px;
+      border-left: 2px solid #2D3650;
+    }
   </style>
 </head>
 <body>
@@ -545,7 +623,144 @@
     <!-- ── Service cards ── -->
     <div class="services-list">
 
-      <!-- 1. Бесплатная консультация -->
+      <!-- 1. Нотариус — main featured service -->
+      <div class="service-card featured">
+        <div class="card-body">
+          <div class="card-top">
+            <div class="card-title-wrap">
+              <div class="card-icon-title">
+                <span class="card-icon">📜</span>
+                <span class="card-title">Нотариус в Испании</span>
+              </div>
+              <span class="badge-recommended">✦ Основная услуга</span>
+            </div>
+          </div>
+          <div class="tier-table">
+            <div class="tier-row">
+              <span class="tier-name">S — Испанский язык</span>
+              <span class="tier-price">€79</span>
+            </div>
+            <div class="tier-row tier-featured">
+              <span class="tier-name">M — Родной язык ⭐</span>
+              <span class="tier-price">€109</span>
+            </div>
+            <div class="tier-row">
+              <span class="tier-name">L — Срочно</span>
+              <span class="tier-price">€149</span>
+            </div>
+          </div>
+          <ul class="card-bullets">
+            <li>Доверенность на УКР / РУС / ENG — без отдельного переводчика</li>
+            <li>Подготовка текста, сопровождение к нотариусу</li>
+            <li>Логистика апостиля включена</li>
+          </ul>
+          <div class="extra-note">+ нотариальный сбор от €75 и апостиль €22/€32 — оплачивается отдельно, прозрачно</div>
+          <a class="btn-card wa-gold" href="https://wa.me/34641048296?text=%D0%9D%D0%BE%D1%82%D0%B0%D1%80%D0%B8%D1%83%D1%81%20%E2%80%94%20%D0%BD%D1%83%D0%B6%D0%BD%D0%B0%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%20%D1%81%20%D0%B4%D0%BE%D0%B2%D0%B5%D1%80%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D1%8C%D1%8E" target="_blank" rel="noopener noreferrer">
+            Обсудить документ
+          </a>
+        </div>
+      </div>
+
+      <!-- 2. Банк -->
+      <div class="service-card">
+        <div class="card-body">
+          <div class="card-top">
+            <div class="card-title-wrap">
+              <div class="card-icon-title">
+                <span class="card-icon">🏦</span>
+                <span class="card-title">Банк — физическое сопровождение</span>
+              </div>
+            </div>
+          </div>
+          <div class="bank-list">
+            <div class="bank-item">
+              <div class="bank-item-name">
+                <span>Открытие счёта</span>
+                <span class="bank-item-sub">2 встречи, документы дистанционно</span>
+              </div>
+              <span class="bank-item-price">от €149</span>
+            </div>
+            <div class="bank-item">
+              <div class="bank-item-name">
+                <span>Разблокировка</span>
+                <span class="bank-item-sub">Еду в банк сам, нередко без клиента</span>
+              </div>
+              <span class="bank-item-price">от €249</span>
+            </div>
+            <div class="bank-item">
+              <div class="bank-item-name">
+                <span>Ипотека</span>
+                <span class="bank-item-sub">Подбор банка, переговоры, сопровождение</span>
+              </div>
+              <span class="bank-item-price">от €500</span>
+            </div>
+          </div>
+          <ul class="card-bullets">
+            <li>Никаких госпошлин — банк их не берёт</li>
+            <li>Одна цена, без сюрпризов</li>
+          </ul>
+          <a class="btn-card wa" href="https://wa.me/34641048296?text=%D0%91%D0%B0%D0%BD%D0%BA%20%E2%80%94%20%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D1%82%D1%8C%20%D1%81%D0%B8%D1%82%D1%83%D0%B0%D1%86%D0%B8%D1%8E" target="_blank" rel="noopener noreferrer">
+            Уточнить ситуацию
+          </a>
+        </div>
+      </div>
+
+      <!-- 3. ВНЖ -->
+      <div class="service-card">
+        <div class="card-body">
+          <div class="card-top">
+            <div class="card-title-wrap">
+              <div class="card-icon-title">
+                <span class="card-icon">📑</span>
+                <span class="card-title">Сопровождение подачи на ВНЖ</span>
+              </div>
+              <span class="badge-recommended">⭐ Популярное</span>
+            </div>
+            <div class="price-badge">
+              <span class="price-amount">от 199 €</span>
+              <span class="price-label">за услугу</span>
+            </div>
+          </div>
+          <ul class="card-bullets">
+            <li>Arraigo social / arraigo laboral / продление</li>
+            <li>Полная проверка документов</li>
+            <li>Запись на cita previa</li>
+            <li>Сопровождение на подаче (Барселона, Мадрид, Аликанте, Валенсия, Малага)</li>
+            <li>Контроль статуса до получения TIE</li>
+          </ul>
+          <a class="btn-card wa" href="https://wa.me/34641048296?text=%D0%A1%D0%BE%D0%BF%D1%80%D0%BE%D0%B2%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%92%D0%9D%D0%96%20%E2%80%94%20%D0%BD%D1%83%D0%B6%D0%BD%D0%B0%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C" target="_blank" rel="noopener noreferrer">
+            Записаться на сопровождение
+          </a>
+        </div>
+      </div>
+
+      <!-- 4. Налоговая консультация -->
+      <div class="service-card">
+        <div class="card-body">
+          <div class="card-top">
+            <div class="card-title-wrap">
+              <div class="card-icon-title">
+                <span class="card-icon">🧾</span>
+                <span class="card-title">Налоговая консультация</span>
+              </div>
+            </div>
+            <div class="price-badge">
+              <span class="price-amount">79 €</span>
+              <span class="price-label">фиксированно</span>
+            </div>
+          </div>
+          <ul class="card-bullets">
+            <li>IRPF, Modelo 720, квартальные платежи autónomo</li>
+            <li>Как легально снизить налоговую базу</li>
+            <li>Письменный вывод + рекомендации</li>
+          </ul>
+          <a class="btn-card wa" href="https://wa.me/34641048296?text=%D0%9D%D0%B0%D0%BB%D0%BE%D0%B3%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8F%20%E2%80%94%20%D0%BD%D1%83%D0%B6%D0%BD%D0%B0%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C" target="_blank" rel="noopener noreferrer">
+            Записаться на налоговую
+          </a>
+        </div>
+      </div>
+
+      <!-- 5. Бесплатная консультация -->
       <div class="service-card">
         <div class="card-body">
           <div class="card-top">
@@ -567,118 +782,7 @@
             <li class="free-bullet">Без обязательств</li>
           </ul>
           <a class="btn-card wa" href="https://wa.me/34641048296?text=%D0%91%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D0%B0%D1%8F%20%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8F%20%E2%80%94%20%D1%85%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BA%D0%B0%D0%BA%20%D0%B2%D1%8B%20%D0%BC%D0%BE%D0%B6%D0%B5%D1%82%D0%B5%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%87%D1%8C" target="_blank" rel="noopener noreferrer">
-            💬 Написать в WhatsApp
-          </a>
-        </div>
-      </div>
-
-      <!-- 2. Проверка документов -->
-      <div class="service-card">
-        <div class="card-body">
-          <div class="card-top">
-            <div class="card-title-wrap">
-              <div class="card-icon-title">
-                <span class="card-icon">📋</span>
-                <span class="card-title">Проверка документов</span>
-              </div>
-            </div>
-            <div class="price-badge">
-              <span class="price-amount">49 €</span>
-              <span class="price-label">фиксированно</span>
-            </div>
-          </div>
-          <ul class="card-bullets">
-            <li>Ваш пакет документов для arraigo / ВНЖ / банка</li>
-            <li>Скажем что не хватает и что исправить</li>
-            <li>Письменный чек-лист + ответы на вопросы</li>
-            <li>Ответ в течение 24 часов</li>
-          </ul>
-          <a class="btn-card wa" href="https://wa.me/34641048296?text=%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%E2%80%94%20%D0%BD%D1%83%D0%B6%D0%BD%D0%B0%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C" target="_blank" rel="noopener noreferrer">
-            💬 Заказать проверку
-          </a>
-        </div>
-      </div>
-
-      <!-- 3. Помощь с банком -->
-      <div class="service-card">
-        <div class="card-body">
-          <div class="card-top">
-            <div class="card-title-wrap">
-              <div class="card-icon-title">
-                <span class="card-icon">🏦</span>
-                <span class="card-title">Помощь с банком</span>
-              </div>
-            </div>
-            <div class="price-badge">
-              <span class="price-amount">29 €</span>
-              <span class="price-label">фиксированно</span>
-            </div>
-          </div>
-          <ul class="card-bullets">
-            <li>Подберём банк под ваш статус и ситуацию</li>
-            <li>Составим точный список документов</li>
-            <li>Объясним как заполнить анкету</li>
-            <li>Если откажут — разберём почему</li>
-          </ul>
-          <a class="btn-card wa" href="https://wa.me/34641048296?text=%D0%9F%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%20%D1%81%20%D0%B1%D0%B0%D0%BD%D0%BA%D0%BE%D0%BC%20%E2%80%94%20%D0%BD%D1%83%D0%B6%D0%BD%D0%B0%20%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8F" target="_blank" rel="noopener noreferrer">
-            💬 Получить помощь с банком
-          </a>
-        </div>
-      </div>
-
-      <!-- 4. Сопровождение подачи на ВНЖ — featured/recommended -->
-      <div class="service-card featured">
-        <div class="card-body">
-          <div class="card-top">
-            <div class="card-title-wrap">
-              <div class="card-icon-title">
-                <span class="card-icon">📑</span>
-                <span class="card-title">Сопровождение подачи на ВНЖ</span>
-              </div>
-              <span class="badge-recommended">⭐ Популярное</span>
-            </div>
-            <div class="price-badge">
-              <span class="price-amount">199 €</span>
-              <span class="price-label">от / за услугу</span>
-            </div>
-          </div>
-          <ul class="card-bullets">
-            <li>Arraigo social / arraigo laboral / продление</li>
-            <li>Полная проверка документов</li>
-            <li>Запись на cita previa</li>
-            <li>Сопровождение на подаче (Барселона, Мадрид, Аликанте, Валенсия, Малага)</li>
-            <li>Контроль статуса до получения TIE</li>
-          </ul>
-          <a class="btn-card wa-gold" href="https://wa.me/34641048296?text=%D0%A1%D0%BE%D0%BF%D1%80%D0%BE%D0%B2%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%92%D0%9D%D0%96%20%E2%80%94%20%D0%BD%D1%83%D0%B6%D0%BD%D0%B0%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C" target="_blank" rel="noopener noreferrer">
-            💬 Записаться на сопровождение
-          </a>
-        </div>
-      </div>
-
-      <!-- 5. Налоговая консультация -->
-      <div class="service-card">
-        <div class="card-body">
-          <div class="card-top">
-            <div class="card-title-wrap">
-              <div class="card-icon-title">
-                <span class="card-icon">🧾</span>
-                <span class="card-title">Налоговая консультация</span>
-              </div>
-            </div>
-            <div class="price-badge">
-              <span class="price-amount">79 €</span>
-              <span class="price-label">фиксированно</span>
-            </div>
-          </div>
-          <ul class="card-bullets">
-            <li>Нужно ли подавать IRPF</li>
-            <li>Modelo 720: активы за рубежом</li>
-            <li>Квартальные платежи autónomo</li>
-            <li>Как легально снизить налоговую базу</li>
-            <li>Письменный вывод + рекомендации</li>
-          </ul>
-          <a class="btn-card wa" href="https://wa.me/34641048296?text=%D0%9D%D0%B0%D0%BB%D0%BE%D0%B3%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8F%20%E2%80%94%20%D0%BD%D1%83%D0%B6%D0%BD%D0%B0%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C" target="_blank" rel="noopener noreferrer">
-            💬 Записаться на налоговую
+            Написать в WhatsApp
           </a>
         </div>
       </div>
