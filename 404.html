@@ -55,47 +55,33 @@
       gap: 8px;
     }
 
-    .avatar {
-      width: 88px;
-      height: 88px;
-      border-radius: 50%;
-      background: #202637;
-      border: 2px solid #C4952A;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 26px;
+    .code-404 {
+      font-size: 140px;
       font-weight: 900;
       color: #C4952A;
-      letter-spacing: -1px;
-      margin-bottom: 2px;
+      letter-spacing: -6px;
+      line-height: 1;
+      text-align: center;
+      margin: 12px 0 4px;
+      font-family: -apple-system, 'Inter', sans-serif;
     }
 
     .name {
-      font-size: 18px;
+      font-size: 22px;
       font-weight: 700;
       color: #EDF1F8;
       text-align: center;
+      margin-bottom: 10px;
     }
 
-    .sub-geo {
-      font-size: 11px;
-      color: #5A6A84;
-      text-align: center;
-      margin-top: -2px;
-      margin-bottom: 6px;
-    }
-
-    .city-intro {
+    .lead {
       width: 100%;
-      background: #1F2638;
-      border: 1px solid #2D3650;
-      border-radius: 11px;
-      padding: 14px 16px;
-      font-size: 13px;
+      font-size: 14px;
       color: #8896B0;
       line-height: 1.6;
-      margin-bottom: 4px;
+      text-align: center;
+      padding: 0 4px;
+      margin-bottom: 18px;
     }
 
     .section-label {
@@ -181,18 +167,15 @@
 <body>
   <div class="card">
 
-    <!-- Avatar -->
-    <div class="avatar">404</div>
+    <!-- Big 404 -->
+    <div class="code-404">404</div>
 
     <!-- Title -->
     <div class="name">Страница не найдена</div>
 
-    <!-- Subtitle -->
-    <div class="sub-geo">Возможно, страница переехала — как и вы в Испанию</div>
-
-    <!-- Explanation card -->
-    <div class="city-intro">
-      Ссылка устарела или адрес ошибочный. Загляните в основные разделы — там всё, что вам нужно.
+    <!-- Lead text -->
+    <div class="lead">
+      Возможно, страница переехала — как и вы в Испанию. Ссылка устарела или адрес ошибочный. Загляните в основные разделы — там всё, что вам нужно.
     </div>
 
     <!-- Main CTA -->
