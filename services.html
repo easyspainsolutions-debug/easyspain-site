@@ -743,6 +743,229 @@
       border-radius: 8px;
       border-left: 2px solid #C4952A;
     }
+
+    /* ── Identity line (Daniil · Аликанте · стаж · языки) ── */
+    .identity-line {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px 10px;
+      font-size: 12px;
+      color: #A8B5CC;
+      margin: -16px 0 24px;
+      padding: 10px 12px;
+      background: rgba(31, 38, 56, 0.55);
+      border: 1px solid #252E45;
+      border-radius: 10px;
+      line-height: 1.4;
+    }
+    .identity-line .id-piece { display: inline-flex; align-items: center; gap: 4px; }
+    .identity-line .id-piece strong { color: #EDF1F8; font-weight: 700; }
+    .identity-line .id-sep { color: #5A6A84; }
+    .identity-line .id-flags { letter-spacing: 0.04em; }
+
+    /* ── Stats strip (170+/300+/100+/6 лет) ── */
+    .stats-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+    .stat {
+      background: #1F2638;
+      border: 1px solid #2D3650;
+      border-radius: 10px;
+      padding: 10px 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      text-align: center;
+    }
+    .stat-num {
+      font-size: 16px;
+      font-weight: 800;
+      color: #C4952A;
+      line-height: 1;
+      letter-spacing: -0.4px;
+    }
+    .stat-label {
+      font-size: 9.5px;
+      color: #8B9BB5;
+      line-height: 1.25;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── Guarantee badge ── */
+    .guarantee-badge {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: linear-gradient(135deg, rgba(52, 199, 89, 0.10), rgba(52, 199, 89, 0.02));
+      border: 1px solid rgba(52, 199, 89, 0.30);
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin-bottom: 26px;
+    }
+    .guarantee-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    .guarantee-text { display: flex; flex-direction: column; gap: 3px; }
+    .guarantee-text strong {
+      color: #EDF1F8;
+      font-size: 13.5px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    .guarantee-text span {
+      color: #A8B5CC;
+      font-size: 11.5px;
+      line-height: 1.45;
+    }
+
+    /* ── Why-me section (знакомства и репутация) ── */
+    .why-section { margin-bottom: 28px; }
+    .why-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .why-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: #1F2638;
+      border: 1px solid #2D3650;
+      border-radius: 12px;
+      padding: 14px;
+    }
+    .why-icon {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(196, 149, 42, 0.12);
+      border: 1px solid rgba(196, 149, 42, 0.32);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      line-height: 1;
+    }
+    .why-text { display: flex; flex-direction: column; gap: 4px; }
+    .why-text strong {
+      color: #EDF1F8;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    .why-text span {
+      color: #A8B5CC;
+      font-size: 12.5px;
+      line-height: 1.5;
+    }
+
+    /* ── Blog cross-strip ── */
+    .blog-cross-strip { margin-bottom: 28px; }
+    .blog-cross-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .blog-cross-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 14px;
+      background: #1F2638;
+      border: 1px solid #2D3650;
+      border-radius: 10px;
+      color: #C8D0E0;
+      text-decoration: none;
+      font-size: 13px;
+      transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.12s;
+    }
+    .blog-cross-link::after {
+      content: '→';
+      color: #C4952A;
+      font-weight: 700;
+      margin-left: 10px;
+      transition: transform 0.15s;
+    }
+    .blog-cross-link:hover {
+      background: #263045;
+      color: #EDF1F8;
+      border-color: rgba(196, 149, 42, 0.4);
+      transform: translateY(-1px);
+    }
+    .blog-cross-link:hover::after { transform: translateX(3px); }
+
+    /* ── Service cards: партнёр-стиль явно холоднее ── */
+    .service-card.partner { border-color: #34405A; }
+    .service-card.partner::before {
+      content: '';
+      display: block;
+      height: 2px;
+      background: linear-gradient(90deg, #4A5878, #2D3650);
+    }
+
+    /* ── Email contact button ── */
+    .btn-contact.email {
+      background: rgba(196, 149, 42, 0.06);
+      border-color: #2D3650;
+    }
+    .btn-contact.email:hover { background: rgba(196, 149, 42, 0.14); }
+
+    /* Контактная сетка 2×2 (4 кнопки: WA, Бот, Канал, Email) */
+    .contact-row.contact-grid-4 {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    /* ── SVG иконки в карточках услуг ── */
+    .card-icon-svg {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      stroke: #C4952A;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      display: block;
+    }
+    .service-card.partner .card-icon-svg { stroke: #8B9BB5; opacity: 0.85; }
+
+    /* ── Sticky WA CTA на мобиле ── */
+    .sticky-cta {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 12px 16px;
+      background: #25D366;
+      color: #0F1117;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35), 0 2px 6px rgba(0, 0, 0, 0.3);
+      transition: transform 0.12s, box-shadow 0.15s;
+    }
+    .sticky-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(37, 211, 102, 0.45), 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+    .sticky-cta:active { transform: scale(0.97); }
+    .sticky-cta-icon { font-size: 16px; line-height: 1; }
+    @media (max-width: 360px) {
+      .sticky-cta-text { display: none; }
+      .sticky-cta { padding: 14px; }
+    }
   </style>
 </head>
 <body>
@@ -762,12 +985,40 @@
       <p class="subtitle">Делаю под ключ: нотариус, банк, перевод, легализация. ВНЖ и налоги — координирую партнёров, отвечаю за результат. Без посредников и скрытых платежей.</p>
     </header>
 
+    <!-- ── Identity line ── -->
+    <div class="identity-line" aria-label="Идентичность">
+      <span class="id-piece">👤 <strong>Daniil Pavlovskyi</strong></span>
+      <span class="id-sep">·</span>
+      <span class="id-piece">📍 Аликанте</span>
+      <span class="id-sep">·</span>
+      <span class="id-piece">4 года в секторе</span>
+      <span class="id-sep">·</span>
+      <span class="id-piece id-flags">🇪🇸 🇷🇺 🇺🇦 🇬🇧</span>
+    </div>
+
     <!-- ── Value prop banner (УПП) ── -->
     <div class="value-prop">
       <div class="value-prop-icon">⚡</div>
       <div class="value-prop-text">
         <strong>Доверенность сразу на твоём языке</strong>
         <span>Без отдельного переводчика. 30 минут у нотариуса — у конкурентов только на испанском.</span>
+      </div>
+    </div>
+
+    <!-- ── Stats strip (масштаб операций) ── -->
+    <div class="stats-strip" aria-label="Статистика">
+      <div class="stat"><span class="stat-num">170+</span><span class="stat-label">доверенностей<br>в год</span></div>
+      <div class="stat"><span class="stat-num">300+</span><span class="stat-label">счетов<br>в год</span></div>
+      <div class="stat"><span class="stat-num">100+</span><span class="stat-label">ВНЖ<br>в год</span></div>
+      <div class="stat"><span class="stat-num">6 лет</span><span class="stat-label">в Испании</span></div>
+    </div>
+
+    <!-- ── Guarantee badge ── -->
+    <div class="guarantee-badge">
+      <div class="guarantee-icon">🛡️</div>
+      <div class="guarantee-text">
+        <strong>Косяк наш — возвращаем всё</strong>
+        <span>Без сроков, без вопросов. Косяк ваш или госорган — стараемся решить до финала.</span>
       </div>
     </div>
 
@@ -782,7 +1033,7 @@
           <div class="card-top">
             <div class="card-title-wrap">
               <div class="card-icon-title">
-                <span class="card-icon">📜</span>
+                <svg class="card-icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
                 <span class="card-title">Нотариус — доверенность</span>
               </div>
               <span class="badge-recommended">✦ Основная услуга</span>
@@ -820,7 +1071,7 @@
           <div class="card-top">
             <div class="card-title-wrap">
               <div class="card-icon-title">
-                <span class="card-icon">🏦</span>
+                <svg class="card-icon-svg" viewBox="0 0 24 24" aria-hidden="true"><polygon points="2 9 12 3 22 9 2 9"/><line x1="3" y1="22" x2="21" y2="22"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="6" y1="22" x2="6" y2="9"/><line x1="18" y1="22" x2="18" y2="9"/><line x1="10" y1="22" x2="10" y2="9"/><line x1="14" y1="22" x2="14" y2="9"/></svg>
                 <span class="card-title">Банк — открытие, разблокировка, ипотека</span>
               </div>
             </div>
@@ -865,7 +1116,7 @@
           <div class="card-top">
             <div class="card-title-wrap">
               <div class="card-icon-title">
-                <span class="card-icon">🗣️</span>
+                <svg class="card-icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="7" y1="9" x2="11" y2="9"/><line x1="7" y1="13" x2="14" y2="13"/></svg>
                 <span class="card-title">Перевод с сопровождением</span>
               </div>
             </div>
@@ -892,7 +1143,7 @@
           <div class="card-top">
             <div class="card-title-wrap">
               <div class="card-icon-title">
-                <span class="card-icon">📂</span>
+                <svg class="card-icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/><circle cx="12" cy="14" r="2.5"/><path d="M12 16.5v3.5"/></svg>
                 <span class="card-title">Легализация документов</span>
               </div>
             </div>
@@ -927,7 +1178,7 @@
           <div class="card-top">
             <div class="card-title-wrap">
               <div class="card-icon-title">
-                <span class="card-icon">📑</span>
+                <svg class="card-icon-svg" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><circle cx="8" cy="12" r="2.5"/><line x1="13" y1="10" x2="20" y2="10"/><line x1="13" y1="14" x2="18" y2="14"/></svg>
                 <span class="card-title">ВНЖ — Arraigo, продление</span>
               </div>
               <span class="badge-partner">Через партнёров</span>
@@ -955,7 +1206,7 @@
           <div class="card-top">
             <div class="card-title-wrap">
               <div class="card-icon-title">
-                <span class="card-icon">🧾</span>
+                <svg class="card-icon-svg" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="13" y1="10" x2="15" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="13" y1="14" x2="15" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg>
                 <span class="card-title">Налоги — IRPF, autónomo</span>
               </div>
               <span class="badge-partner">Через партнёров</span>
@@ -985,6 +1236,34 @@
       <strong>Работаю по всей Испании</strong>
       Барселона · Мадрид · Аликанте · Валенсия · Малага
     </div>
+
+    <!-- ── Why me (знакомства, репутация, масштаб) ── -->
+    <section class="why-section">
+      <div class="section-label"><span class="label-dot"></span>Почему ко мне</div>
+      <div class="why-list">
+        <div class="why-item">
+          <div class="why-icon">🤝</div>
+          <div class="why-text">
+            <strong>Знаком в нотариате и банках</strong>
+            <span>За годы работы — прямые контакты в нотариальных конторах и отделениях банков. Это сокращает сроки и убирает «ваш случай нестандартный».</span>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">📈</div>
+          <div class="why-text">
+            <strong>570+ кейсов в год</strong>
+            <span>170 доверенностей, 300 счетов, 100 ВНЖ — каждая задача знакома до уровня «знаю, что спросят и в какой бумажке копаться».</span>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">🇪🇸</div>
+          <div class="why-text">
+            <strong>База в Аликанте, выезжаю по стране</strong>
+            <span>Барселона, Мадрид, Валенсия, Малага — выезжаю на сделку. Перевожу: 🇪🇸 🇷🇺 🇺🇦 🇬🇧.</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- ── How it works ── -->
     <section class="process-section">
@@ -1087,7 +1366,19 @@
           </button>
           <div class="faq-a" role="region">
             <div class="faq-a-inner">
-              Если ещё до подачи я вижу, что задача не решается на твоих исходных данных — говорю сразу и возвращаю гонорар полностью. Если документы поданы, а отказ пришёл из-за ошибки на моей стороне или госоргана — переподаю бесплатно. О рисках, которые ты принимаешь осознанно (например, отказ по фоновой проверке), предупреждаю до старта.
+              Если до старта понимаю, что задача не решается на твоих исходных данных — говорю сразу, гонорар не беру. Если уже взял в работу и провалился из-за моей ошибки — возвращаю всю сумму, без сроков и без переписки. Если отказ пришёл из-за ситуации на твоей стороне (неполные документы, спорная биография) или решения госоргана — стараемся доводить до результата вместе: переподача, корректировка, апелляция. Условия в этом случае обсуждаем индивидуально, исходя из того, чей это был косяк.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" id="faq-lawyer">
+          <button class="faq-q" onclick="toggleFaq('faq-lawyer')" aria-expanded="false">
+            Почему ваш пакет дешевле адвоката за €500?
+            <span class="chevron">▼</span>
+          </button>
+          <div class="faq-a" role="region">
+            <div class="faq-a-inner">
+              Потому что я не адвокат — я операционист. Делаю руками то, на что адвокат тратит ассистента: записи, переводы, апостили, очереди в нотариате и банке. Цена адвоката оправдана, когда нужна юридическая позиция в суде или сложный спор. Для документов под ключ — нет, переплата.
             </div>
           </div>
         </div>
@@ -1107,9 +1398,22 @@
       </div>
     </section>
 
+    <!-- ── Blog cross-strip ── -->
+    <section class="blog-cross-strip">
+      <div class="section-label"><span class="label-dot"></span>📖 Подробнее в блоге</div>
+      <div class="blog-cross-list">
+        <a class="blog-cross-link" href="/blog/apostil-perevod.html">Апостиль и перевод документов</a>
+        <a class="blog-cross-link" href="/blog/bank-nerezident.html">Открытие счёта нерезиденту</a>
+        <a class="blog-cross-link" href="/blog/vnzh-ispaniya.html">ВНЖ через Arraigo</a>
+        <a class="blog-cross-link" href="/blog/irpf-nalogi-ispaniya.html">Налоги IRPF и autónomo</a>
+        <a class="blog-cross-link" href="/blog/nie-tie-ispaniya.html">NIE и TIE — что и зачем</a>
+        <a class="blog-cross-link" href="/blog/">Все 25 статей блога</a>
+      </div>
+    </section>
+
     <!-- ── Footer contacts ── -->
     <footer class="page-footer">
-      <div class="contact-row">
+      <div class="contact-row contact-grid-4">
         <a class="btn-contact wa" href="https://wa.me/34641048296" target="_blank" rel="noopener noreferrer">
           <span class="contact-icon">💬</span>
           <div class="contact-label">
@@ -1131,13 +1435,26 @@
             <span class="contact-sub">@easyspainuaru</span>
           </div>
         </a>
+        <a class="btn-contact email" href="mailto:easyspainsolutions@gmail.com">
+          <span class="contact-icon">✉️</span>
+          <div class="contact-label">
+            <span class="contact-title">Email</span>
+            <span class="contact-sub">easyspainsolutions@gmail.com</span>
+          </div>
+        </a>
       </div>
       <div class="footer-note">
-        <span>Daniil Pavlovskyi · +34 641 048 296</span> · EASY SPAIN SOLUTIONS
+        <span>Daniil Pavlovskyi · Аликанте · +34 641 048 296</span> · EASY SPAIN SOLUTIONS
       </div>
     </footer>
 
   </div>
+
+  <!-- ── Sticky WhatsApp CTA (mobile-friendly) ── -->
+  <a class="sticky-cta" href="https://wa.me/34641048296" target="_blank" rel="noopener noreferrer" aria-label="Написать в WhatsApp">
+    <span class="sticky-cta-icon">💬</span>
+    <span class="sticky-cta-text">WhatsApp</span>
+  </a>
 
   <script>
     function toggleFaq(id) {
