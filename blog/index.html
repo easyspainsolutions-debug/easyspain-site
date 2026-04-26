@@ -225,45 +225,22 @@
       margin-top: -4px;
     }
 
-    /* Блок «предложить тему» — лёгкий, не перебивает основной CTA */
-    .suggest-block {
-      width: 100%;
-      background: rgba(196, 149, 42, 0.08);
-      border: 1px dashed rgba(196, 149, 42, 0.35);
-      border-radius: 11px;
-      padding: 14px 18px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin: 18px 0 4px;
+    /* Карточка «предложить тему» — встроена в ленту статей, всегда последняя.
+       Текст обновляется JS под текущий фильтр (см. <script> внизу). */
+    .article-card--suggest {
+      background: rgba(196, 149, 42, 0.06);
+      border: 1px dashed rgba(196, 149, 42, 0.45);
     }
-    .suggest-block-title {
-      font-size: 14px;
+    .article-card--suggest:hover {
+      background: rgba(196, 149, 42, 0.12);
+      border-color: #C4952A;
+    }
+    .article-card--suggest .article-tag {
+      color: #C4952A;
       font-weight: 700;
+    }
+    .article-card--suggest .article-title {
       color: #EDF1F8;
-    }
-    .suggest-block-sub {
-      font-size: 13px;
-      color: #A8B5CC;
-      line-height: 1.5;
-    }
-    .suggest-block-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      align-self: flex-start;
-      padding: 9px 16px;
-      border-radius: 9px;
-      background: #C4952A;
-      color: #0F1117;
-      font-size: 13.5px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: background 0.15s, transform 0.12s;
-    }
-    .suggest-block-btn:hover {
-      background: #D6A636;
-      transform: translateY(-1px);
     }
 
     .btn {
@@ -469,15 +446,17 @@
       <span class="article-meta">~7 мин чтения</span>
     </a>
 
-    <div class="divider"></div>
+    <!-- Контекстная карточка: всегда последняя, текст и href меняются от фильтра -->
+    <a class="article-card article-card--suggest" id="suggestCard"
+       href="https://t.me/EasySpainAdmin_bot?start=suggest"
+       target="_blank" rel="noopener noreferrer">
+      <span class="article-tag" id="suggestTag">💡 Своя идея</span>
+      <span class="article-title" id="suggestTitle">Не нашли тему — предложите свою</span>
+      <span class="article-desc" id="suggestDesc">Опишите вопрос или ситуацию, которой нет в нашем блоге. Если тема актуальна — станет статьёй или постом в @easyspainuaru.</span>
+      <span class="article-meta">~1 минута заполнить</span>
+    </a>
 
-    <div class="suggest-block">
-      <div class="suggest-block-title">💡 Не нашли свою тему?</div>
-      <div class="suggest-block-sub">Предложите, о чём написать — расскажите свою ситуацию или вопрос. Если тема актуальна — станет статьёй или постом в нашем Telegram-канале.</div>
-      <a class="suggest-block-btn" href="https://t.me/EasySpainAdmin_bot?start=suggest" target="_blank" rel="noopener noreferrer">
-        ✍️ Предложить тему
-      </a>
-    </div>
+    <div class="divider"></div>
 
     <div class="cta-block">
       <div class="cta-block-title">Нужна помощь с документами?</div>
@@ -509,11 +488,32 @@
       if(el && counts[cat]) el.textContent = counts[cat];
     });
 
+    // Контекстный suggest-card в зависимости от выбранного фильтра.
+    var SUGGEST_CONTEXT = {
+      all:     { tag: '💡 Своя идея',          title: 'Не нашли тему — предложите свою',                        desc: 'Опишите вопрос или ситуацию, которой нет в нашем блоге. Если тема актуальна — станет статьёй или постом в @easyspainuaru.', payload: 'suggest' },
+      vnzh:    { tag: '💡 Своя тема по ВНЖ',     title: 'Не нашли вашу ситуацию по ВНЖ — расскажите',           desc: 'Какой вид ВНЖ, какая страна, какой документ? Опишите — разберём в новой статье.', payload: 'suggest_vnzh' },
+      docs:    { tag: '💡 Своя тема по документам', title: 'Какого документа нет в блоге?',                       desc: 'Что нужно оформить? С какой страной? Расскажите ситуацию — превратим в гайд.', payload: 'suggest_docs' },
+      finance: { tag: '💡 Своя тема по банкам',  title: 'Какой финансовый вопрос остался без ответа?',           desc: 'Банки, переводы, ипотека, инвестиции в Испании — опишите свой кейс.', payload: 'suggest_finance' },
+      work:    { tag: '💡 Своя тема по работе',  title: 'Какой вопрос по работе или autónomo не закрыт?',         desc: 'Регистрация, налоги, контракты, поиск работы — расскажите ситуацию.', payload: 'suggest_work' },
+      life:    { tag: '💡 Своя тема по жизни',   title: 'Какой бытовой вопрос интересует?',                       desc: 'Жильё, страховки, медицина, транспорт, дети — опишите, чем поделиться.', payload: 'suggest_life' },
+      social:  { tag: '💡 Своя тема по соц. помощи', title: 'Какое пособие или помощь интересует?',              desc: 'IMV, ayudas, Cruz Roja, Cáritas — расскажите свою ситуацию, разберём в посте.', payload: 'suggest_social' },
+    };
+    var suggestCard  = document.getElementById('suggestCard');
+    var suggestTag   = document.getElementById('suggestTag');
+    var suggestTitle = document.getElementById('suggestTitle');
+    var suggestDesc  = document.getElementById('suggestDesc');
+
     function applyFilter(f) {
       btns.forEach(function(b){ b.classList.toggle('active', b.dataset.filter === f); });
       cards.forEach(function(c){
         c.classList.toggle('hidden', f !== 'all' && c.dataset.cat !== f);
       });
+      // Обновляем suggest-карточку под текущую категорию
+      var ctx = SUGGEST_CONTEXT[f] || SUGGEST_CONTEXT.all;
+      if (suggestCard)  suggestCard.href      = 'https://t.me/EasySpainAdmin_bot?start=' + ctx.payload;
+      if (suggestTag)   suggestTag.textContent   = ctx.tag;
+      if (suggestTitle) suggestTitle.textContent = ctx.title;
+      if (suggestDesc)  suggestDesc.textContent  = ctx.desc;
     }
 
     // Read filter from URL on load
