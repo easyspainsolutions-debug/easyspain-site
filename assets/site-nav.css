@@ -148,8 +148,10 @@ body:has(> header.site-nav) {
 }
 .site-nav__tg svg { width: 18px; height: 18px; }
 
-/* Узкие экраны — компактные иконки + скрываем «Главная» (лого уже ведёт туда) */
-@media (max-width: 420px) {
+/* Узкие экраны (включая iPhone Pro Max до 480px) — компактные иконки
+   + скрываем «Главная» (лого уже ведёт туда), чтобы 3 контактные кнопки
+   гарантированно поместились с любым активным nav-link. */
+@media (max-width: 480px) {
   .site-nav__inner { padding: 10px 10px; gap: 6px; }
   .site-nav__links a[data-page="home"] { display: none; }
   .site-nav__wa, .site-nav__tg { width: 32px; height: 32px; }
