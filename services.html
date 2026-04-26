@@ -929,10 +929,6 @@
     }
 
     /* ─────────────────────────────────────
-       Desktop header & footer (hidden on mobile)
-       ───────────────────────────────────── */
-    .desktop-header,
-    /* ─────────────────────────────────────
        DESKTOP ADAPTATION (≥900px)
        Не меняет мобильную верстку — только переопределения для широких экранов
        ───────────────────────────────────── */
@@ -951,71 +947,13 @@
         line-height: 1.6;
       }
 
-      /* Sticky desktop header */
-      .desktop-header {
-        display: block;
-        width: 100%;
-        align-self: stretch;
-        background: rgba(15, 19, 30, 0.85);
-        backdrop-filter: blur(14px);
-        -webkit-backdrop-filter: blur(14px);
-        border-bottom: 1px solid #252E45;
-        position: sticky;
-        top: 0;
-        z-index: 40;
-      }
-      .dh-inner {
-        max-width: 1140px;
-        margin: 0 auto;
-        padding: 14px 32px;
-        display: flex;
-        align-items: center;
-        gap: 32px;
-      }
-      .dh-logo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        text-decoration: none;
-      }
-      .dh-nav {
-        display: flex;
-        gap: 28px;
-        margin-left: 24px;
-        flex: 1;
-      }
-      .dh-nav a {
-        color: #A8B5CC;
-        text-decoration: none;
-        font-size: 14px;
-        font-weight: 500;
-        transition: color 0.15s;
-      }
-      .dh-nav a:hover { color: #EDF1F8; }
-      .dh-nav a.active { color: #C4952A; font-weight: 600; }
-      .dh-cta {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        background: #25D366;
-        color: #0F1117;
-        padding: 10px 18px;
-        border-radius: 999px;
-        font-size: 14px;
-        font-weight: 700;
-        text-decoration: none;
-        transition: transform 0.12s, background 0.15s;
-        white-space: nowrap;
-      }
-      .dh-cta:hover { transform: translateY(-1px); background: #2BDA6E; }
-
       /* Скрываем мобильный breadcrumb (есть полноценный header) */
       .nav-breadcrumb { display: none; }
 
       /* Шире контейнер */
       .page {
         max-width: 1140px;
-        padding: 32px 32px 56px;
+        padding: 32px 32px 80px;
         gap: 0;
       }
 
@@ -1164,39 +1102,11 @@
       }
       .blog-cross-link { font-size: 14px; padding: 14px 16px; }
 
-      /* Скрываем мобильный footer (есть полноценный desktop-footer) */
-      /* Скрываем sticky CTA на десктопе */
-      /* ── DESKTOP FOOTER ── */
-      .df-brand .df-logo-wrap {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 14px;
-      }
-      .df-flags { font-size: 18px; letter-spacing: 0.06em; }
-      .df-col h4 {
-        font-size: 12px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        color: #7E8FA8;
-        margin-bottom: 16px;
-      }
-      .df-col a {
-        display: block;
-        color: #A8B5CC;
-        text-decoration: none;
-        font-size: 14px;
-        padding: 6px 0;
-        transition: color 0.15s;
-      }
-      .df-col a:hover { color: #C4952A; }
-      .df-bottom .df-bottom-right { color: #7E8FA8; }
     }
 
     /* Большие десктопы — ещё чуть шире padding */
     @media (min-width: 1280px) {
-      .dh-inner, .page, .df-inner, .df-bottom { padding-left: 40px; padding-right: 40px; }
+      .page { padding-left: 40px; padding-right: 40px; }
     }
   </style>
 </head>
