@@ -33,5 +33,7 @@ var ARTICLES = [
   { slug: 'arraigo-laboral-ispaniya',   title: 'Arraigo laboral — ВНЖ через 2 года работы в Испании',           tag: 'ВНЖ',                     cat: 'vnzh',    time: 7 },
   { slug: 'seguro-hogar-ispaniya',      title: 'Страховка жилья в Испании: как выбрать seguro de hogar',        tag: 'Жильё · Страховка',       cat: 'life',    time: 6 },
   { slug: 'modelo-030',                 title: 'Modelo 030: регистрация и изменение данных в налоговой Испании', tag: 'Документы · Налоговая',  cat: 'docs',    time: 6 },
-  { slug: 'certificado-digital',        title: 'Certificado digital: электронная подпись в Испании 2026',        tag: 'Документы · Электронная подпись', cat: 'docs', time: 7 }
+  { slug: 'certificado-digital',        title: 'Certificado digital: электронная подпись в Испании 2026',        tag: 'Документы · Электронная подпись', cat: 'docs', time: 7 },
+  // Нотариальные услуги — апрель 2026
+  { slug: 'doverennost-na-russkom',     title: 'Доверенность в Испании на русском за 30 минут — €109',           tag: 'Документы · Нотариус',    cat: 'docs',    time: 6 }
 ];
