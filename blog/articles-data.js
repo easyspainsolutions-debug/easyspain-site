@@ -35,5 +35,6 @@ var ARTICLES = [
   { slug: 'modelo-030',                 title: 'Modelo 030: регистрация и изменение данных в налоговой Испании', tag: 'Документы · Налоговая',  cat: 'docs',    time: 6 },
   { slug: 'certificado-digital',        title: 'Certificado digital: электронная подпись в Испании 2026',        tag: 'Документы · Электронная подпись', cat: 'docs', time: 7 },
   // Нотариальные услуги — апрель 2026
-  { slug: 'doverennost-na-russkom',     title: 'Доверенность в Испании на русском за 30 минут — €109',           tag: 'Документы · Нотариус',    cat: 'docs',    time: 6 }
+  { slug: 'doverennost-na-russkom',     title: 'Доверенность в Испании на русском за 30 минут — €109',           tag: 'Документы · Нотариус',    cat: 'docs',    time: 6 },
+  { slug: 'carta-de-invitacion-ispaniya', title: 'Carta de invitación через нотариуса — день в день',             tag: 'Документы · Нотариус',    cat: 'docs',    time: 6 }
 ];
