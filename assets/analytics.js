@@ -103,9 +103,9 @@
   function autoCTAFromHref(a) {
     var href = a.getAttribute('href') || '';
     if (href.indexOf('wa.me') > -1 || href.indexOf('whatsapp.com') > -1) return 'cta_click_whatsapp';
-    if (href.indexOf('t.me/krepko_admin_bot') > -1) return 'cta_click_bot';
-    if (href.indexOf('t.me/krepko') > -1) return 'cta_click_channel';
-    if (href.indexOf('t.me/krepko_chat') > -1) return 'cta_click_chat';
+    if (href.indexOf('t.me/krepko_es_admin_bot') > -1) return 'cta_click_bot';
+    if (href.indexOf('t.me/krepko_es') > -1) return 'cta_click_channel';
+    if (href.indexOf('t.me/krepko_es_chat') > -1) return 'cta_click_chat';
     if (href.indexOf('mailto:') === 0) return 'cta_click_email';
     if (href.indexOf('instagram.com') > -1) return 'cta_click_instagram';
     return null;
