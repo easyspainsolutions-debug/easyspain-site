@@ -180,11 +180,9 @@ body:has(> header.site-nav) {
     gap: 24px;
   }
   .site-nav__brand-mark {
-    width: 34px; height: 34px;
-    font-size: 14px;
-    border-radius: 9px;
+    width: 32px; height: 32px;
   }
-  .site-nav__brand-text { font-size: 19px; }
+  .site-nav__brand-text { font-size: 22px; }
   .site-nav__links { gap: 4px; justify-content: flex-start; }
   .site-nav__links a {
     padding: 9px 16px;
