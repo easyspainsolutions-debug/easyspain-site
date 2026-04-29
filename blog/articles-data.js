@@ -38,5 +38,6 @@ var ARTICLES = [
   { slug: 'doverennost-na-russkom',     title: 'Доверенность в Испании на русском за 30 минут',                  tag: 'Документы · Нотариус',    cat: 'docs',    time: 6 },
   { slug: 'carta-de-invitacion-ispaniya', title: 'Carta de invitación через нотариуса — день в день',             tag: 'Документы · Нотариус',    cat: 'docs',    time: 6 },
   { slug: 'matrimonio-ispaniya-inostrancev', title: 'Свадьба в Испании для иностранцев: брак в нотариусе или ЗАГСе', tag: 'Документы · Нотариус · Семья', cat: 'docs', time: 6 },
-  { slug: 'separacion-de-bienes-ispaniya', title: 'Брачный контракт (separación de bienes) в Испании: как защитить активы', tag: 'Документы · Нотариус · Семья', cat: 'docs', time: 5 }
+  { slug: 'separacion-de-bienes-ispaniya', title: 'Брачный контракт (separación de bienes) в Испании: как защитить активы', tag: 'Документы · Нотариус · Семья', cat: 'docs', time: 5 },
+  { slug: 'razvod-ispaniya-notarius', title: 'Развод в Испании через нотариуса: быстрее и дешевле, чем суд', tag: 'Документы · Нотариус · Семья', cat: 'docs', time: 5 }
 ];
