@@ -1,25 +1,70 @@
 /* ============================================================
-   Krepko — Централизованный GA4 event-tracker для CTA-кликов.
+   Krepko — Централизованный CTA event-tracker.
 
-   Подход: делегирование через [data-cta]. На любой кнопке/ссылке
-   ставится атрибут data-cta="<id>" — скрипт сам ловит клик и
-   шлёт в gtag событие cta_click с параметром cta_id.
+   Делегирование через [data-cta]: на любой кнопке/ссылке ставится
+   атрибут data-cta="<id>" — скрипт ловит клик и отправляет:
+
+   1. В GA4 (если gtag доступен) — событие cta_click
+   2. В наш бот на Railway (если задан endpoint) — для дневной/ночной
+      сводки в Telegram
+
+   Endpoint настраивается через <meta name="krepko-track-endpoint">
+   в <head>. Если meta нет — отправляется только в GA4.
 
    Авто-разметка для общих компонентов: site-nav (WA + 2 TG).
-
-   Custom dimensions в GA4 Admin (зарегистрировать вручную):
-   - cta_id          (event-scoped, из event parameter)
-   - cta_page        (event-scoped)
-   - cta_text        (event-scoped)
    ============================================================ */
 
 (function () {
   'use strict';
 
-  // gtag должен быть подключён выше в <head> через GA4 snippet
-  function ga(eventName, params) {
+  // ── Конфиг ──
+  function getTrackEndpoint() {
+    var meta = document.querySelector('meta[name="krepko-track-endpoint"]');
+    return meta ? (meta.getAttribute('content') || '').trim() : '';
+  }
+
+  // ── GA4 ──
+  function sendGA(ctaId, ctaText, href) {
     if (typeof window.gtag !== 'function') return;
-    try { window.gtag('event', eventName, params); } catch (e) {}
+    try {
+      window.gtag('event', 'cta_click', {
+        cta_id: ctaId,
+        cta_page: location.pathname,
+        cta_text: ctaText,
+        cta_href: href
+      });
+    } catch (e) {}
+  }
+
+  // ── Наш бот (sendBeacon — не теряется при уходе в новую вкладку) ──
+  function sendToBot(ctaId, ctaText) {
+    var endpoint = getTrackEndpoint();
+    if (!endpoint) return;
+    var payload = JSON.stringify({
+      cta_id: ctaId,
+      cta_page: location.pathname,
+      cta_text: ctaText
+    });
+    try {
+      // sendBeacon работает даже когда браузер уходит на другую вкладку.
+      // text/plain нужен чтобы избежать CORS preflight для simple-request.
+      if (navigator.sendBeacon) {
+        var blob = new Blob([payload], { type: 'text/plain;charset=UTF-8' });
+        navigator.sendBeacon(endpoint, blob);
+        return;
+      }
+    } catch (e) {}
+    // Фолбэк — fetch с keepalive
+    try {
+      fetch(endpoint, {
+        method: 'POST',
+        body: payload,
+        headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+        keepalive: true,
+        mode: 'cors',
+        credentials: 'omit'
+      }).catch(function () {});
+    } catch (e) {}
   }
 
   // ── Авто-разметка nav-кнопок (header — общий для всех страниц) ──
@@ -47,12 +92,8 @@
     if (!ctaId) return;
     var text = (el.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 60);
     var href = el.getAttribute('href') || '';
-    ga('cta_click', {
-      cta_id: ctaId,
-      cta_page: location.pathname,
-      cta_text: text,
-      cta_href: href
-    });
+    sendGA(ctaId, text, href);
+    sendToBot(ctaId, text);
   }, true);
 
   if (document.readyState === 'loading') {
